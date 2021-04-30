@@ -1,0 +1,50 @@
+package menu;
+
+
+import api.IAction;
+
+public class MenuItem {
+    private String title;
+    private Menu nextMenu;
+    private IAction action;
+
+  public MenuItem() {
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public Menu getNextMenu() {
+    return nextMenu;
+  }
+
+  public void setNextMenu(Menu nextMenu) {
+    this.nextMenu = nextMenu;
+  }
+
+  public IAction getAction() {
+    return action;
+  }
+
+  public void setAction(IAction action) {
+    this.action = action;
+  }
+
+  public MenuItem(String title,IAction action, Menu nextMenu ) {
+    this.title = title;
+    this.nextMenu = nextMenu;
+    this.action = action;
+  }
+
+  void doAction() {
+      if(action!=null){
+        action.execute();
+      }
+    }
+
+}
