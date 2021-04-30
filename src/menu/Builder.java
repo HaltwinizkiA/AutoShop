@@ -1,6 +1,7 @@
 package menu;
 
 import actions.Exit;
+import actions.ViewFreePlace;
 import actions.master.*;
 import actions.order.*;
 
@@ -74,6 +75,7 @@ public class Builder {
         mainMenuItems.add(new MenuItem("Order Sort", null, sortOrderMenu));
         mainMenuItems.add(new MenuItem("Master Menu", null, masterMenu));
         mainMenuItems.add(new MenuItem("Master Sort", null, sortMasterMenu));
+        mainMenuItems.add(new MenuItem("View Free Place",new ViewFreePlace(),mainMenu));
         mainMenuItems.add(new MenuItem("Exit", null, null));
         mainMenu.setMenuItem(mainMenuItems);
         this.rootMenu = mainMenu;
