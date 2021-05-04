@@ -48,6 +48,7 @@ public class AdminBuilder implements Build, Serializable {
         orderMenuItems.add(new MenuItem("Close Order", new CloseOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Dell Order", new DellOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Progress Order", new ProgressOrder(), orderMenu));
+        orderMenuItems.add(new MenuItem("Transfer the order to the master",new TransferTheOrderToTheMaster(),orderMenu));
         orderMenuItems.add(new MenuItem("Modify Order Planed Start Date", new ModifyPlannedStartDate(), orderMenu));
         orderMenuItems.add(new MenuItem("View all Order", new ViewAllOrders(), orderMenu));
         orderMenuItems.add(new MenuItem("View Order in Progress", new ViewOrderInProgress(), orderMenu));
