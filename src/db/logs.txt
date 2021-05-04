@@ -8,3 +8,13 @@ java.lang.NullPointerException: Cannot invoke "model.garage.Garage.getCars()" be
 java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.master.Master.getOrder()" is null
 java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.master.Master.getOrder()" is null
 java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.master.Master.getOrder()" is null
+java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\builders\AdminBuilder.ser (Системе не удается найти указанный путь)
+java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\builders\MasterBuilder.ser (Системе не удается найти указанный путь)
+java.io.InvalidClassException: model.garage.Garage; local class incompatible: stream classdesc serialVersionUID = 5023125914801947866, local class serialVersionUID = -5905675035532476797
+java.lang.NullPointerException: Cannot invoke "Object.toString()" because "garage" is null
+java.io.InvalidClassException: model.garage.Garage; local class incompatible: stream classdesc serialVersionUID = 5023125914801947866, local class serialVersionUID = -5905675035532476797
+java.lang.NullPointerException: Cannot invoke "Object.toString()" because "garage" is null
+java.io.InvalidClassException: model.garage.Garage; local class incompatible: stream classdesc serialVersionUID = 5023125914801947866, local class serialVersionUID = -5905675035532476797
+java.lang.NullPointerException: Cannot invoke "Object.toString()" because "garage" is null
+java.io.InvalidClassException: model.garage.Garage; local class incompatible: stream classdesc serialVersionUID = 5023125914801947866, local class serialVersionUID = -5905675035532476797
+java.lang.NullPointerException: Cannot invoke "Object.toString()" because "garage" is null

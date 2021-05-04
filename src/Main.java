@@ -5,6 +5,7 @@ import menu.AdminBuilder;
 import menu.ManagerBuilder;
 import menu.MasterBuilder;
 import menu.MenuController;
+import model.garage.Garage;
 import model.master.Master;
 import utils.FileWorker;
 
@@ -20,7 +21,18 @@ public class Main {
 
         MenuController menuController = new MenuController();
         menuController.run();
-
+//        try (FileOutputStream outputStream = new FileOutputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\builders\\MasterBuilder.ser");
+//             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
+//            Build build=new MasterBuilder();
+//            objectOutputStream.writeObject(build);
+//            objectOutputStream.close();
+//
+//
+//        } catch (Exception e) {
+//            System.out.println(e.toString());
+//
+//
+//        }
 
 
 

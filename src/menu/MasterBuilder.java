@@ -1,7 +1,5 @@
 package menu;
 
-import actions.Exit;
-import actions.ViewFreePlace;
 import actions.master.*;
 import actions.order.*;
 import api.Build;
@@ -35,7 +33,6 @@ public class MasterBuilder implements Build , Serializable {
     public void buildMainMenu() {
         List<MenuItem> mainMenuItems = new ArrayList<>();
         mainMenu.setName("Main menu");
-        mainMenuItems.add(new MenuItem("View Master In Order", new ViewMasterInOrder(), masterMenu));
         mainMenuItems.add(new MenuItem("Progress Order", new ProgressOrder(), orderMenu));
         mainMenuItems.add(new MenuItem("Canceled Order", new CanceledOrder(), orderMenu));
         mainMenuItems.add(new MenuItem("View all Order", new ViewAllOrders(), orderMenu));

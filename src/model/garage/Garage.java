@@ -4,10 +4,16 @@ package model.garage;
 import model.car.Car;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Garage implements Serializable {
     private int capacity;
     private Car[] cars;
+
+    @Override
+    public String toString() {
+        return Arrays.toString(cars);
+    }
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;

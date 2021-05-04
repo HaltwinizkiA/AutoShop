@@ -1,7 +1,8 @@
 package menu;
 
 import actions.Exit;
-import actions.ViewFreePlace;
+import actions.FreeUpSpaceBox;
+import actions.ViewFreeBox;
 import actions.master.*;
 import actions.order.*;
 import api.Build;
@@ -72,7 +73,8 @@ public class ManagerBuilder implements Build , Serializable {
         mainMenuItems.add(new MenuItem("Order Sort", null, sortOrderMenu));
         mainMenuItems.add(new MenuItem("Master Menu", null, masterMenu));
         mainMenuItems.add(new MenuItem("Master Sort", null, sortMasterMenu));
-        mainMenuItems.add(new MenuItem("View Free Place", new ViewFreePlace(), mainMenu));
+        mainMenuItems.add(new MenuItem("Free up space in the BOX", new FreeUpSpaceBox(), mainMenu));
+        mainMenuItems.add(new MenuItem("View Free Place", new ViewFreeBox(), mainMenu));
         mainMenuItems.add(new MenuItem("Exit", null, null));
         mainMenu.setMenuItem(mainMenuItems);
         this.rootMenu = mainMenu;

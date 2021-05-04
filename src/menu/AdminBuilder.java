@@ -1,7 +1,9 @@
 package menu;
 
 import actions.Exit;
-import actions.ViewFreePlace;
+import actions.FreeUpSpaceBox;
+import actions.ModifyBoxCapacity;
+import actions.ViewFreeBox;
 import actions.master.*;
 import actions.order.*;
 import api.Build;
@@ -30,7 +32,8 @@ public class AdminBuilder implements Build, Serializable {
     public Menu getMainMenu() {
         return mainMenu;
     }
-@Override
+
+    @Override
     public void buildMainMenu() {
         List<MenuItem> sortOrderMenuItems = new ArrayList<>();
         sortOrderMenu.setName("Order Sorting");
@@ -48,7 +51,7 @@ public class AdminBuilder implements Build, Serializable {
         orderMenuItems.add(new MenuItem("Close Order", new CloseOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Dell Order", new DellOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Progress Order", new ProgressOrder(), orderMenu));
-        orderMenuItems.add(new MenuItem("Transfer the order to the master",new TransferTheOrderToTheMaster(),orderMenu));
+        orderMenuItems.add(new MenuItem("Transfer the order to the master", new TransferTheOrderToTheMaster(), orderMenu));
         orderMenuItems.add(new MenuItem("Modify Order Planed Start Date", new ModifyPlannedStartDate(), orderMenu));
         orderMenuItems.add(new MenuItem("View all Order", new ViewAllOrders(), orderMenu));
         orderMenuItems.add(new MenuItem("View Order in Progress", new ViewOrderInProgress(), orderMenu));
@@ -78,7 +81,9 @@ public class AdminBuilder implements Build, Serializable {
         mainMenuItems.add(new MenuItem("Order Sort", null, sortOrderMenu));
         mainMenuItems.add(new MenuItem("Master Menu", null, masterMenu));
         mainMenuItems.add(new MenuItem("Master Sort", null, sortMasterMenu));
-        mainMenuItems.add(new MenuItem("View Free Place", new ViewFreePlace(), mainMenu));
+        mainMenuItems.add(new MenuItem("View Free Place", new ViewFreeBox(), mainMenu));
+        mainMenuItems.add(new MenuItem("Free up space in the BOX", new FreeUpSpaceBox(), mainMenu));
+        mainMenuItems.add(new MenuItem("Modify BOX Capacity", new ModifyBoxCapacity(), mainMenu));
         mainMenuItems.add(new MenuItem("Exit", null, null));
         mainMenu.setMenuItem(mainMenuItems);
         this.rootMenu = mainMenu;
