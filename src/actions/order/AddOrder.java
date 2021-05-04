@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class AddOrder implements IAction {
     @Override
     public void execute() {
+        FileWorker fileWorker=new FileWorker();
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter car:\nmark-");
         String mark = scanner.nextLine();
@@ -40,10 +41,10 @@ public class AddOrder implements IAction {
         try {  plannedStartDate = dateFormat.parse(date);
 
         } catch (ParseException e) {
-            e.printStackTrace();
+           fileWorker.logger("add order exception"+e);
         }
         Order order = new Order(new Date(), plannedStartDate, car, owner, work, price);
-        FileWorker fileWorker=new FileWorker();
+
         List<Order> orderList=fileWorker.ordersRead();
         orderList.add(order);
         fileWorker.ordersWriter(orderList);

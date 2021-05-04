@@ -32,7 +32,7 @@ public class ModifyPlannedStartDate implements IAction {
         try {  plannedStartDate = dateFormat.parse(date);
 
         } catch (ParseException e) {
-            e.printStackTrace();
+            worker.logger("modify order exception"+e);
         }
         orders.get(orderNumber).setPlannedStartDate(plannedStartDate);
         worker.ordersWriter(orders);

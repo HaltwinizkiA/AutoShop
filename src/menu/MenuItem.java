@@ -3,7 +3,9 @@ package menu;
 
 import api.IAction;
 
-public class MenuItem {
+import java.io.Serializable;
+
+public class MenuItem implements Serializable {
     private String title;
     private Menu nextMenu;
     private IAction action;

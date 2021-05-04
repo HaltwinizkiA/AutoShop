@@ -5,3 +5,6 @@ java.io.EOFException
 java.lang.NullPointerException: Cannot invoke "model.garage.Garage.getCars()" because "garage" is null
 java.io.EOFException
 java.lang.NullPointerException: Cannot invoke "model.garage.Garage.getCars()" because "garage" is null
+java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.master.Master.getOrder()" is null
+java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.master.Master.getOrder()" is null
+java.lang.NullPointerException: Cannot invoke "Object.equals(Object)" because the return value of "model.master.Master.getOrder()" is null

@@ -1,11 +1,13 @@
 package utils;
 
+import api.Build;
 import model.garage.Garage;
 import model.master.Master;
 import model.order.Order;
 
 import java.io.*;
 import java.util.List;
+import java.util.Properties;
 
 public class FileWorker {
 
@@ -24,7 +26,21 @@ public class FileWorker {
         }
 
     }
+    public Build builderReader(String file){
+        try (FileInputStream fileInputStream = new FileInputStream(file);
+             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
 
+
+            Build builder = (Build) objectInputStream.readObject();
+            return builder;
+
+        } catch (Exception e) {
+            logger(e.toString());
+            return null;
+        }
+
+
+    }
     public boolean masterWriter(List<Master> masters) {
         try (FileOutputStream outputStream = new FileOutputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\masterList.ser");
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
@@ -109,4 +125,5 @@ public class FileWorker {
 
 
     }
+
 }

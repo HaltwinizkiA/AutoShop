@@ -1,5 +1,5 @@
 package api;
 
-public interface IAction {
+public interface IAction  {
     public void execute();
 }

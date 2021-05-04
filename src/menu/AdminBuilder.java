@@ -4,11 +4,13 @@ import actions.Exit;
 import actions.ViewFreePlace;
 import actions.master.*;
 import actions.order.*;
+import api.Build;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Builder {
+public class AdminBuilder implements Build, Serializable {
     private final Menu mainMenu;
     private final Menu orderMenu;
     private final Menu masterMenu;
@@ -16,19 +18,19 @@ public class Builder {
     private final Menu sortMasterMenu;
     private Menu rootMenu;
 
-    public Builder() {
-        mainMenu = new Menu();
-        orderMenu = new Menu();
-        masterMenu = new Menu();
-        sortOrderMenu = new Menu();
-        sortMasterMenu = new Menu();
+    public AdminBuilder() {
+        this.mainMenu = new Menu();
+        this.orderMenu = new Menu();
+        this.masterMenu = new Menu();
+        this.sortOrderMenu = new Menu();
+        this.sortMasterMenu = new Menu();
         this.rootMenu = new Menu();
     }
 
     public Menu getMainMenu() {
         return mainMenu;
     }
-
+@Override
     public void buildMainMenu() {
         List<MenuItem> sortOrderMenuItems = new ArrayList<>();
         sortOrderMenu.setName("Order Sorting");
@@ -46,7 +48,7 @@ public class Builder {
         orderMenuItems.add(new MenuItem("Close Order", new CloseOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Dell Order", new DellOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Progress Order", new ProgressOrder(), orderMenu));
-        orderMenuItems.add(new MenuItem("Modify Order Planed Start Date",new ModifyPlannedStartDate(),orderMenu));
+        orderMenuItems.add(new MenuItem("Modify Order Planed Start Date", new ModifyPlannedStartDate(), orderMenu));
         orderMenuItems.add(new MenuItem("View all Order", new ViewAllOrders(), orderMenu));
         orderMenuItems.add(new MenuItem("View Order in Progress", new ViewOrderInProgress(), orderMenu));
         orderMenuItems.add(new MenuItem("View Order in Time", new ViewOrderInTime(), orderMenu));
@@ -69,14 +71,13 @@ public class Builder {
         masterMenuItems.add(new MenuItem("EXIT", new Exit(), masterMenu));
         masterMenu.setMenuItem(masterMenuItems);
 
-
         List<MenuItem> mainMenuItems = new ArrayList<>();
         mainMenu.setName("Main menu");
         mainMenuItems.add(new MenuItem("Order Menu", null, orderMenu));
         mainMenuItems.add(new MenuItem("Order Sort", null, sortOrderMenu));
         mainMenuItems.add(new MenuItem("Master Menu", null, masterMenu));
         mainMenuItems.add(new MenuItem("Master Sort", null, sortMasterMenu));
-        mainMenuItems.add(new MenuItem("View Free Place",new ViewFreePlace(),mainMenu));
+        mainMenuItems.add(new MenuItem("View Free Place", new ViewFreePlace(), mainMenu));
         mainMenuItems.add(new MenuItem("Exit", null, null));
         mainMenu.setMenuItem(mainMenuItems);
         this.rootMenu = mainMenu;
@@ -90,4 +91,5 @@ public class Builder {
     public void setRootMenu(Menu rootMenu) {
         this.rootMenu = rootMenu;
     }
+
 }
