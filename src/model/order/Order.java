@@ -3,33 +3,37 @@ package model.order;
 
 import annotation.OrderStatus;
 import model.car.Car;
+import model.garage.Garage;
+import model.master.Master;
+import model.work.Work;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Order implements Serializable {
     private final Date createOrderDate;
-    private Date dateOfCompletion;
     private final Car car;
     private final String ownersName;
-    private final String work;
+    private final List<Work> work;
     private final double price;
+    private Date dateOfCompletion;
     private Date plannedStartDate;
     private OrderStatus status;
-
-    public void setDateOfCompletion(Date dateOfCompletion) {
-        this.dateOfCompletion = dateOfCompletion;
-    }
+    private Master master;
+    private Garage garage;
 
     public Order(Date createOrderDate, Date plannedStartDate, Car car, String ownersName, String work, double price) {
         this.createOrderDate = createOrderDate;
         this.plannedStartDate = plannedStartDate;
         this.car = car;
         this.ownersName = ownersName;
-        this.work = work;
+        this.work = new ArrayList<>();
         this.price = price;
-        status=OrderStatus.ACCEPTED;
-    }
+        status = OrderStatus.ACCEPTED;
+
+            }
 
     public Date getPlannedStartDate() {
         return plannedStartDate;
@@ -43,6 +47,10 @@ public class Order implements Serializable {
         return dateOfCompletion;
     }
 
+    public void setDateOfCompletion(Date dateOfCompletion) {
+        this.dateOfCompletion = dateOfCompletion;
+    }
+
     public Car getCar() {
         return car;
     }
@@ -51,7 +59,7 @@ public class Order implements Serializable {
         return ownersName;
     }
 
-    public String getWork() {
+    public List<Work> getWork() {
         return work;
     }
 
@@ -75,6 +83,6 @@ public class Order implements Serializable {
 
     @Override
     public String toString() {
-        return "Order status: " + status + "/ car arrival time: " + createOrderDate +"/plannde start date:"+plannedStartDate + "/ ownersName:" + ownersName + "/ work:" + work + "/ " + car;
+        return "Order status: " + status + "/ car arrival time: " + createOrderDate + "/planned start date:" + plannedStartDate + "/ ownersName:" + ownersName + "/ work:" + work + "/ " + car;
     }
 }

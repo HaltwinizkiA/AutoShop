@@ -9,30 +9,34 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class ViewOrderInTime implements IAction {
     @Override
     public void execute() {
-        FileWorker worker=new FileWorker();
-        List<Order> orderList=worker.ordersRead();
-        Scanner scanner=new Scanner(System.in);
+        FileWorker worker = new FileWorker();
+        Properties properties = worker.getProperties();
+        String path = properties.getProperty("orderList");
+        List<Order> orderList = (List<Order>) worker.reader(path);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("enter time interval in format HH:mm dd/MM/yy \nfirst:");
-        String time1=scanner.nextLine();
+        String time1 = scanner.nextLine();
         System.out.println("second");
-        String time2=scanner.nextLine();
+        String time2 = scanner.nextLine();
         DateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yy");
         dateFormat.setLenient(false);
-        Date firstTime=null;
-        Date secondTime=null;
-        try {  firstTime = dateFormat.parse(time1);
-                secondTime=dateFormat.parse(time2);
+        Date firstTime = null;
+        Date secondTime = null;
+        try {
+            firstTime = dateFormat.parse(time1);
+            secondTime = dateFormat.parse(time2);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        for(int i=0;i<orderList.size();i++){
-            if (orderList.get(i).getCreateOrderDate().getTime()>=firstTime.getTime()&orderList.get(i).getCreateOrderDate().getTime()<=secondTime.getTime()){
-                System.out.println("# "+i+" "+orderList.get(i));
+        for (int i = 0; i < orderList.size(); i++) {
+            if (orderList.get(i).getCreateOrderDate().getTime() >= firstTime.getTime() & orderList.get(i).getCreateOrderDate().getTime() <= secondTime.getTime()) {
+                System.out.println("# " + i + " " + orderList.get(i));
             }
         }
 

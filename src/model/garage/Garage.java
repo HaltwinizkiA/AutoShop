@@ -8,15 +8,16 @@ import java.util.Arrays;
 
 public class Garage implements Serializable {
     private int capacity;
-    private Car[] cars;
+    private Car[] cars;//сделать лист гаражей .лист машин
+
+    public Garage(int capacity) {
+        this.capacity = capacity;
+        this.cars = new Car[capacity];
+    }
 
     @Override
     public String toString() {
         return Arrays.toString(cars);
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 
     public Car[] getCars() {
@@ -27,13 +28,11 @@ public class Garage implements Serializable {
         this.cars = cars;
     }
 
-    public Garage(int capacity) {
-        this.capacity = capacity;
-        this.cars=new Car[capacity];
-    }
-
-
     public int getCapacity() {
         return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }

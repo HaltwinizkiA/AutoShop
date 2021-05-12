@@ -13,40 +13,41 @@ public class Master implements Serializable {
     private final Specialty specialty;
     private final String phoneNumber;
     private Order order;
-    private int status;
+    private boolean status;
 
-
-
-    public int getStatus() {
-        return status;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public Master(String name, String dateOfBirth, String phoneNumber, Specialty specialty) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.specialty = specialty;
-        this.status=0;
+        this.status = false;
 
+    }
+
+    public int getStatus() {
+        if (status) {
+            return 1;
+        } else return 0;
+    }
+
+    public Order getOrder() {
+        return order;
     }
 
     public void setOrder(Order order) {
         this.order = order;
         this.order.setStatus(OrderStatus.IN_PROGRESS);
-        this.status=1;
+        this.status = true;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
     public String toString() {
-        return "Master name: " + name + "/ date of birth: " + dateOfBirth + "/ phoneNumber: " + phoneNumber + "/ specialty: " + specialty+"/Order in performance: "+order;
+        return "Master name: " + name + "/ date of birth: " + dateOfBirth + "/ phoneNumber: " + phoneNumber + "/ specialty: " + specialty + "/Order in performance: " + order;
     }
 }
 

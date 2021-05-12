@@ -9,16 +9,19 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class ModifyPlannedStartDate implements IAction {
-    private final FileWorker worker = new FileWorker();
-    private final Scanner scanner = new Scanner(System.in);
+
 
     @Override
     public void execute() {
-
-        List<Order> orders = worker.ordersRead();
+         FileWorker worker = new FileWorker();
+         Scanner scanner = new Scanner(System.in);
+        Properties properties = worker.getProperties();
+        String path = properties.getProperty("orderList");
+        List<Order> orders = (List<Order>) worker.reader(path);
         for (int i = 0; i < orders.size(); i++) {
             System.out.println(orders.get(i).toString());
         }
@@ -35,7 +38,7 @@ public class ModifyPlannedStartDate implements IAction {
             worker.logger("modify order exception"+e);
         }
         orders.get(orderNumber).setPlannedStartDate(plannedStartDate);
-        worker.ordersWriter(orders);
+        worker.writer(orders,path);
 
     }
 }

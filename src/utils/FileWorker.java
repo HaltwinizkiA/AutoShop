@@ -12,111 +12,51 @@ import java.util.Properties;
 public class FileWorker {
 
 
-    public List<Master> mastersReader() {
-        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\masterList.ser");
-             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-
-
-            List<Master> masters = (List<Master>) objectInputStream.readObject();
-            return masters;
-
-        } catch (Exception e) {
-            logger(e.toString());
+    public Properties getProperties(){
+        try(FileInputStream inputStream=new FileInputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\resources\\property.properties")){
+            Properties properties=new Properties();
+            properties.load(inputStream);
+            return properties;
+        }catch (Exception e){
+            logger("properties err "+e);
             return null;
         }
-
     }
-    public Build builderReader(String file){
-        try (FileInputStream fileInputStream = new FileInputStream(file);
-             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-
-
-            Build builder = (Build) objectInputStream.readObject();
-            return builder;
-
-        } catch (Exception e) {
-            logger(e.toString());
-            return null;
-        }
-
-
-    }
-    public boolean masterWriter(List<Master> masters) {
-        try (FileOutputStream outputStream = new FileOutputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\masterList.ser");
+    public void writer(Object object, String path) {
+        try (FileOutputStream outputStream = new FileOutputStream(path);
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
 
-            objectOutputStream.writeObject(masters);
+            objectOutputStream.writeObject(object);
             objectOutputStream.close();
-            return true;
+
 
         } catch (Exception e) {
             logger(e.toString());
-            return false;
+
+
         }
+
     }
 
-    public List<Order> ordersRead() {
-        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\orderList.ser");
+    public Object reader(String path) {
+        try (FileInputStream fileInputStream = new FileInputStream(path);
              ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
 
-            List<Order> orders = (List<Order>) objectInputStream.readObject();
-            return orders;
-        } catch (Exception e) {
-            logger(e.toString());
-            return null;
-        }
-    }
-
-    public boolean ordersWriter(List<Order> orders) {
-        try (FileOutputStream outputStream = new FileOutputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\orderList.ser");
-             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
-
-            objectOutputStream.writeObject(orders);
-            objectOutputStream.close();
-            return true;
-
-        } catch (Exception e) {
-            logger(e.toString());
-            return false;
-        }
-    }
-
-    public Garage garageReader() {
-        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\garage.ser");
-             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-
-
-            Garage garages = (Garage) objectInputStream.readObject();
-            return garages;
+            Object object = objectInputStream.readObject();
+            return object;
         } catch (Exception e) {
 
             logger(e.toString());
             return null;
         }
+    }//обобщитть лехе ТУТУДУДА TODO
+    //пропертис файл для записи и чтения сериализованных объедков.
 
-    }
-
-    public boolean garageWriter(Garage garages) {
-        try (FileOutputStream outputStream = new FileOutputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\db\\garage.ser");
-             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
-
-            objectOutputStream.writeObject(garages);
-            objectOutputStream.close();
-            return true;
-
-        } catch (Exception e) {
-            logger(e.toString());
-
-            return false;
-        }
-
-
-    }
 
     public boolean logger(String string) {
-        File file = new File("C:\\Users\\37533\\Projects\\AutoShop\\src\\db", "logs.txt");
-        try (FileWriter writer = new FileWriter(file,true)) {
-            writer.write(string+"\n");
+        File file = new File("C:\\Users\\37533\\Projects\\AutoShop\\src\\resources\\logs.txt");
+        try (FileWriter writer = new FileWriter(file, true)) {
+            writer.write(string + "\n");
             return true;
         } catch (IOException e) {
             e.printStackTrace();

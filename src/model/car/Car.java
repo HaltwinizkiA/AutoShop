@@ -3,14 +3,21 @@ package model.car;
 import java.io.Serializable;
 
 public class Car implements Serializable {
-    private final  String mark;
-    private final  String model;
-    private final  String color;
-    private final  String number;
+    private final String mark;
+    private final String model;
+    private final String color;
+    private final String number;
+
+    public Car(String mark, String model, String color, String number) {
+        this.mark = mark;
+        this.model = model;
+        this.color = color;
+        this.number = number;
+    }
 
     @Override
     public String toString() {
-        return "Car mark: " + mark + "/ model: " + model + "/ color: " + color +"/ number: " + number;
+        return "Car mark: " + mark + "/ model: " + model + "/ color: " + color + "/ number: " + number;
     }
 
     public String getMark() {
@@ -27,12 +34,5 @@ public class Car implements Serializable {
 
     public String getNumber() {
         return number;
-    }
-
-    public Car(String mark, String model, String color, String number) {
-        this.mark = mark;
-        this.model = model;
-        this.color = color;
-        this.number = number;
     }
 }

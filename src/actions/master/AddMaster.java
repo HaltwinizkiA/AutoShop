@@ -6,6 +6,7 @@ import model.master.Master;
 import utils.FileWorker;
 
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class AddMaster implements IAction {
@@ -27,9 +28,11 @@ public class AddMaster implements IAction {
         try {
             Master master = new Master(name, dateOfBirth, phoneNumber, specialties[numOfSpecialty]);
             FileWorker worker = new FileWorker();
-            List<Master> masterList = worker.mastersReader();
+            Properties properties = worker.getProperties();
+            String path = properties.getProperty("masterList");
+            List<Master> masterList = (List<Master>) worker.reader(path);
             masterList.add(master);
-            worker.masterWriter(masterList);
+            worker.writer(masterList, path);
         } catch (Exception e) {
             e.printStackTrace();
         }

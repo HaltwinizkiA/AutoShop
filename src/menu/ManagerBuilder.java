@@ -5,6 +5,9 @@ import actions.FreeUpSpaceBox;
 import actions.ViewFreeBox;
 import actions.master.*;
 import actions.order.*;
+import actions.work.AddWork;
+import actions.work.DellWork;
+import actions.work.ViewWorkList;
 import api.Build;
 
 import java.io.Serializable;
@@ -15,6 +18,7 @@ public class ManagerBuilder implements Build , Serializable {
     private final Menu mainMenu;
     private final Menu orderMenu;
     private final Menu masterMenu;
+    private final Menu workMenu;
     private final Menu sortOrderMenu;
     private final Menu sortMasterMenu;
     private Menu rootMenu;
@@ -30,6 +34,7 @@ public class ManagerBuilder implements Build , Serializable {
         this.sortOrderMenu = new Menu();
         this.sortMasterMenu = new Menu();
         this.rootMenu = new Menu();
+        this.workMenu=new Menu();
     }
 
     @Override
@@ -53,6 +58,10 @@ public class ManagerBuilder implements Build , Serializable {
         orderMenuItems.add(new MenuItem("Exit", new Exit(), orderMenu));
         orderMenu.setMenuItem(orderMenuItems);
 
+        List<MenuItem> workMenuItems=new ArrayList<>();
+        workMenu.setName("Work menu");
+        workMenuItems.add(new MenuItem("View Work List",new ViewWorkList(),workMenu));
+
         List<MenuItem> sortMasterMenuItems = new ArrayList<>();
         sortMasterMenu.setName("Master Sort");
         sortMasterMenuItems.add(new MenuItem("Sort by Name", new SortMasterName(), sortMasterMenu));
@@ -73,6 +82,7 @@ public class ManagerBuilder implements Build , Serializable {
         mainMenuItems.add(new MenuItem("Order Sort", null, sortOrderMenu));
         mainMenuItems.add(new MenuItem("Master Menu", null, masterMenu));
         mainMenuItems.add(new MenuItem("Master Sort", null, sortMasterMenu));
+        mainMenuItems.add(new MenuItem("Work menu",null,workMenu));
         mainMenuItems.add(new MenuItem("Free up space in the BOX", new FreeUpSpaceBox(), mainMenu));
         mainMenuItems.add(new MenuItem("View Free Place", new ViewFreeBox(), mainMenu));
         mainMenuItems.add(new MenuItem("Exit", null, null));

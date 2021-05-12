@@ -18,3 +18,18 @@ java.io.InvalidClassException: model.garage.Garage; local class incompatible: st
 java.lang.NullPointerException: Cannot invoke "Object.toString()" because "garage" is null
 java.io.InvalidClassException: model.garage.Garage; local class incompatible: stream classdesc serialVersionUID = 5023125914801947866, local class serialVersionUID = -5905675035532476797
 java.lang.NullPointerException: Cannot invoke "Object.toString()" because "garage" is null
+java.lang.NullPointerException
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\property.properties (Системе не удается найти указанный путь)
+java.lang.NullPointerException
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\property.properties (Системе не удается найти указанный путь)
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\property.properties (Системе не удается найти указанный путь)
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\property.properties (Системе не удается найти указанный путь)
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\db\property.properties (Системе не удается найти указанный путь)
+java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\resources\orderList.ser" (Синтаксическая ошибка в имени файла, имени папки или метке тома)
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "orders" is null
+java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\resources\orderList.ser" (Синтаксическая ошибка в имени файла, имени папки или метке тома)
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "orders" is null
+java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\resources\orderList.ser" (Синтаксическая ошибка в имени файла, имени папки или метке тома)
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "orders" is null
+java.io.InvalidClassException: model.order.Order; local class incompatible: stream classdesc serialVersionUID = 7576837089345642168, local class serialVersionUID = -5491907122008988952
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "orders" is null
