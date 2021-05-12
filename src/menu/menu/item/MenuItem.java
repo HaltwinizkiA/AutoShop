@@ -1,7 +1,8 @@
-package menu;
+package menu.menu.item;
 
 
 import api.IAction;
+import menu.Menu;
 
 import java.io.Serializable;
 
@@ -43,7 +44,7 @@ public class MenuItem implements Serializable {
     this.action = action;
   }
 
-  void doAction() {
+  public void doAction() {
       if(action!=null){
         action.execute();
       }

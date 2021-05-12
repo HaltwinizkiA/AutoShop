@@ -1,8 +1,9 @@
-package menu;
+package menu.builder;
 
-import actions.master.*;
 import actions.order.*;
 import api.Build;
+import menu.Menu;
+import menu.menu.item.MenuItem;
 
 import java.io.Serializable;
 import java.util.ArrayList;

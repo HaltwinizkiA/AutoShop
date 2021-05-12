@@ -1,5 +1,6 @@
-package menu;
+package menu.navigator;
 
+import menu.Menu;
 import utils.FileWorker;
 
 public class Navigator {

@@ -33,3 +33,19 @@ java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\src\resources\or
 java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "orders" is null
 java.io.InvalidClassException: model.order.Order; local class incompatible: stream classdesc serialVersionUID = 7576837089345642168, local class serialVersionUID = -5491907122008988952
 java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "orders" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null
+java.io.InvalidClassException: model.work.Work; local class incompatible: stream classdesc serialVersionUID = -2582405421259292358, local class serialVersionUID = -8119853418544246795
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "workList" is null

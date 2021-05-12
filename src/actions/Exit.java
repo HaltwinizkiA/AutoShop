@@ -1,7 +1,7 @@
 package actions;
 
 import api.IAction;
-import menu.MenuController;
+import menu.MenuController.MenuController;
 
 public class Exit implements IAction {
     @Override

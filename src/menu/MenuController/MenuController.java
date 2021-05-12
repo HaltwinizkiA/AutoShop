@@ -1,10 +1,12 @@
-package menu;
+package menu.MenuController;
 
 import api.Build;
+import menu.navigator.Navigator;
+import menu.builder.AdminBuilder;
+import menu.builder.ManagerBuilder;
+import menu.builder.MasterBuilder;
 import utils.FileWorker;
 
-import java.io.FileInputStream;
-import java.util.Properties;
 import java.util.Scanner;
 
 public class MenuController {

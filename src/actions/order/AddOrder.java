@@ -3,21 +3,20 @@ package actions.order;
 import api.IAction;
 import model.car.Car;
 import model.order.Order;
+import model.work.Work;
 import utils.FileWorker;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Properties;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddOrder implements IAction {
     @Override
     public void execute() {
         FileWorker worker = new FileWorker();
         Properties properties = worker.getProperties();
+        String workListPath = properties.getProperty("workList");
         String path = properties.getProperty("orderList");
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter car:\nmark-");
@@ -31,12 +30,30 @@ public class AddOrder implements IAction {
         System.out.println("owner name:");
         String owner = scanner.nextLine();
         System.out.println("work:");
-        String work = scanner.nextLine();
+        List<Work> workList = (List<Work>) worker.reader(workListPath);
+        List<Work> workInOrder = new ArrayList<>();
+        while (true) {
+            for (int i = 0; i < workList.size(); i++) {
+                System.out.println(i + " " + workList.get(i));
+            }
+            System.out.println("select work");
+            try {
+
+
+                int select = scanner.nextInt();
+                workInOrder.add(workList.get(select));
+                workList.remove(select);
+            } catch (Exception e) {
+                worker.logger(e.toString());
+                break;
+            }
+
+
+        }
+
 
         System.out.println("planned start work date in format - HH:mm dd/MM/yy ");
         String date = scanner.nextLine();
-        System.out.println("price");
-        double price = Double.parseDouble(scanner.nextLine());
         Car car = new Car(mark, model, color, number);
         DateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yy");
         dateFormat.setLenient(false);
@@ -47,8 +64,12 @@ public class AddOrder implements IAction {
         } catch (ParseException e) {
             worker.logger("add order exception" + e);
         }
+        double price = 0;
+        for (Work work : workInOrder) {
+            price += work.getPrice();
+        }
 
-        Order order = new Order(new Date(), plannedStartDate, car, owner, work, price);
+        Order order = new Order(new Date(), plannedStartDate, car, owner, workInOrder, price);
 
         List<Order> orderList = (List<Order>) worker.reader(path);
         orderList.add(order);

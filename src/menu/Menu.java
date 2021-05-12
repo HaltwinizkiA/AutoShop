@@ -1,5 +1,7 @@
 package menu;
 
+import menu.menu.item.MenuItem;
+
 import java.io.Serializable;
 import java.util.List;
 

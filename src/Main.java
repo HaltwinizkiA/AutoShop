@@ -1,35 +1,26 @@
 
-import menu.AdminBuilder;
-import menu.MasterBuilder;
-import menu.MenuController;
-import model.car.Car;
-import model.garage.Garage;
-import model.order.Order;
+import menu.MenuController.MenuController;
+import model.work.Work;
 import utils.FileWorker;
 
-
-
-import java.io.*;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 
 public class Main {
 
     public static void main(String[] args)  {
 
-//        MenuController menuController = new MenuController();
-//        menuController.run();
-        FileWorker worker=new FileWorker();
-        Car car=new Car("Ford","skatebor","green","kh-2345");
-        Order order=new Order(new Date(),new Date(),car,"Sasha","work",2000);
-        List<Order> orders=new ArrayList<>();
-        orders.add(order);
-        worker.writer(orders,"C:\\Users\\37533\\Projects\\AutoShop\\src\\resources\\orderList.ser");
+        MenuController menuController = new MenuController();
+        menuController.run();
+//        List<Work> workList=new ArrayList<>();
+//        workList.add(new Work("Remove wheels",50));
+//        workList.add(new Work("Change of oil",100));
+//        FileWorker worker=new FileWorker();
+//        Properties properties=worker.getProperties();
+//        String path=properties.getProperty("workList");
+//        worker.writer(workList,path);
 
 
 

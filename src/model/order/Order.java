@@ -24,12 +24,12 @@ public class Order implements Serializable {
     private Master master;
     private Garage garage;
 
-    public Order(Date createOrderDate, Date plannedStartDate, Car car, String ownersName, String work, double price) {
+    public Order(Date createOrderDate, Date plannedStartDate, Car car, String ownersName, List<Work> work, double price) {
         this.createOrderDate = createOrderDate;
         this.plannedStartDate = plannedStartDate;
         this.car = car;
         this.ownersName = ownersName;
-        this.work = new ArrayList<>();
+        this.work = work;
         this.price = price;
         status = OrderStatus.ACCEPTED;
 
