@@ -83,6 +83,7 @@ public class Order implements Serializable {
 
     @Override
     public String toString() {
-        return "Order status: " + status + "/ car arrival time: " + createOrderDate + "/planned start date:" + plannedStartDate + "/ ownersName:" + ownersName + "/ work:" + work + "/ " + car;
+        return "Order status: " + status + "/ car arrival time: " + createOrderDate + "/planned start date:" + plannedStartDate + "/ ownersName:" + ownersName + "/ work:" + work + "/ " + car
+                +" \nprice: "+ price;
     }
 }

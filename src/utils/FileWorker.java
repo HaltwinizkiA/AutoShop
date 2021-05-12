@@ -1,27 +1,23 @@
 package utils;
 
-import api.Build;
-import model.garage.Garage;
-import model.master.Master;
-import model.order.Order;
-
+import javax.management.BadStringOperationException;
 import java.io.*;
-import java.util.List;
 import java.util.Properties;
 
 public class FileWorker {
 
 
-    public Properties getProperties(){
-        try(FileInputStream inputStream=new FileInputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\resources\\property.properties")){
-            Properties properties=new Properties();
+    public Properties getProperties() {
+        try (FileInputStream inputStream = new FileInputStream("C:\\Users\\37533\\Projects\\AutoShop\\src\\resources\\property.properties")) {
+            Properties properties = new Properties();
             properties.load(inputStream);
             return properties;
-        }catch (Exception e){
-            logger("properties err "+e);
+        } catch (Exception e) {
+            logger("properties err " + e);
             return null;
         }
     }
+
     public void writer(Object object, String path) {
         try (FileOutputStream outputStream = new FileOutputStream(path);
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
@@ -38,6 +34,22 @@ public class FileWorker {
 
     }
 
+    public <T> T lehaReader(String path) {
+        try (FileInputStream fileInputStream = new FileInputStream(path);
+             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+            Object object = objectInputStream.readObject();
+
+            return (T) object;
+        } catch (Exception e) {
+
+            logger(e.toString());
+            return null;
+        }
+
+
+    }
+
+
     public Object reader(String path) {
         try (FileInputStream fileInputStream = new FileInputStream(path);
              ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
@@ -49,8 +61,8 @@ public class FileWorker {
             logger(e.toString());
             return null;
         }
-    }//обобщитть лехе ТУТУДУДА TODO
-    //пропертис файл для записи и чтения сериализованных объедков.
+    }
+
 
 
     public boolean logger(String string) {

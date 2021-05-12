@@ -14,8 +14,9 @@ public class ViewAllOrders implements IAction {
         Properties properties = worker.getProperties();
         String path = properties.getProperty("orderList");
         List<Order> orders = (List<Order>) worker.reader(path);
+
         for (int i=0;i<orders.size();i++) {
-            System.out.println(orders.get(i).toString());
+            System.out.println(i+" "+orders.get(i).toString());
         }
     }
 }

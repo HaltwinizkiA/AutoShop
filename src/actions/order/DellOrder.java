@@ -16,6 +16,8 @@ public class DellOrder implements IAction {
         Properties properties = worker.getProperties();
         String path = properties.getProperty("orderList");
         List<Order> orders = (List<Order>) worker.reader(path);
+        IAction action = new ViewAllOrders();
+        action.execute();
         System.out.println("enter the order number for remove");
         int num = scanner.nextInt();
         orders.remove(num);

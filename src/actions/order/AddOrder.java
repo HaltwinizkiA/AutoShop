@@ -54,6 +54,7 @@ public class AddOrder implements IAction {
 
         System.out.println("planned start work date in format - HH:mm dd/MM/yy ");
         String date = scanner.nextLine();
+        date=scanner.nextLine();
         Car car = new Car(mark, model, color, number);
         DateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yy");
         dateFormat.setLenient(false);
@@ -74,6 +75,7 @@ public class AddOrder implements IAction {
         List<Order> orderList = (List<Order>) worker.reader(path);
         orderList.add(order);
         worker.writer(orderList, path);
+        System.out.println("order created");
 
 
     }

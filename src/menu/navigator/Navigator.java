@@ -4,21 +4,17 @@ import menu.Menu;
 import utils.FileWorker;
 
 public class Navigator {
+
     private Menu currentMenu;
 
     public Navigator(Menu currentMenu) {
-
         setCurrentMenu(currentMenu);
-
     }
 
-    public void printmenu() {
+    public void printMenu() {
         for (int i = 0; i < this.currentMenu.getMenuItem().size(); i++) {
-
-            System.out.println(i + " - "+this.currentMenu.getNameMenuItem(i));
-
+            System.out.println(i + " - " + this.currentMenu.getNameMenuItem(i));
         }
-
     }
 
     public Menu getCurrentMenu() {
@@ -33,16 +29,13 @@ public class Navigator {
         try {
             this.currentMenu.getMenuItem().get(index).doAction();
             setCurrentMenu(this.currentMenu.getMenuItem().get(index).getNextMenu());
-
         } catch (Exception e) {
-            FileWorker worker=new FileWorker();
+            FileWorker worker = new FileWorker();
             worker.logger(e.toString());
         }
-
     }
 
     public void update() {
         System.out.println("You in " + currentMenu.getName());
     }
-
 }
