@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AutoShop">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../library/AutoShop-Model.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
