@@ -7,8 +7,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="AutoShop-Configuration" level="project" />
-    <orderEntry type="library" exported="" name="src" level="project" />
-    <orderEntry type="library" exported="" name="src1" level="project" />
+    <orderEntry type="library" name="AutoShop" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../library/AutoShop-utils.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

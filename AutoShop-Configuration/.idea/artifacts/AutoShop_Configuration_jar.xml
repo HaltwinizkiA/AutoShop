@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AutoShop-Configuration:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_Configuration_jar</output-path>
+    <root id="archive" name="AutoShop-Configuration.jar">
+      <element id="module-output" name="AutoShop-Configuration" />
+      <element id="library" level="project" name="AutoShop" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../library/AutoShop-utils.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
