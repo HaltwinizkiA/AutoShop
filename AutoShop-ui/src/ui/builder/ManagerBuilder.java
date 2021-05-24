@@ -1,10 +1,9 @@
 package ui.builder;
 import ui.action.Exit;
-import ui.action.box.FreeUpSpaceBox;
-import ui.action.box.ViewFreeBox;
+import ui.action.box.*;
 import ui.action.master.*;
 import ui.action.order.*;
-import ui.action.work.ViewWorkList;
+import ui.action.work.*;
 import ui.api.Build;
 import ui.menu.item.MenuItem;
 import ui.menu.*;

@@ -3,8 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_Configuration_jar</output-path>
     <root id="archive" name="AutoShop-Configuration.jar">
       <element id="module-output" name="AutoShop-Configuration" />
-      <element id="library" level="project" name="AutoShop" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../library/AutoShop-utils.jar" path-in-jar="/" />
+      <element id="library" level="project" name="AutoShop" />
     </root>
   </artifact>
 </component>

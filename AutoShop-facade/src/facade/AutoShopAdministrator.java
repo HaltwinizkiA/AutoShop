@@ -34,9 +34,9 @@ public class AutoShopAdministrator {
         fileWorker = new FileWorker();
         autoShopConfiguration = new AutoShopConfiguration();
         orderList = fileWorker.lehaReader(autoShopConfiguration.getOrderListPath());
-        boxList = fileWorker.lehaReader(autoShopConfiguration.getGarageList());
+        boxList = fileWorker.lehaReader(autoShopConfiguration.getBoxListPath());
         masterList = fileWorker.lehaReader(autoShopConfiguration.getMasterListPath());
-        workList = fileWorker.lehaReader(autoShopConfiguration.getWorkList());
+        workList = fileWorker.lehaReader(autoShopConfiguration.getWorkListPath());
 
 
     }

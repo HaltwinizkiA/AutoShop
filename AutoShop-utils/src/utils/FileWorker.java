@@ -21,7 +21,6 @@ public class FileWorker {
     public void writer(Object object, String path) {
         try (FileOutputStream outputStream = new FileOutputStream(path);
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
-
             objectOutputStream.writeObject(object);
             objectOutputStream.close();
 

@@ -26,11 +26,11 @@ public class AutoShopConfiguration {
         return properties.getProperty("masterList");
     }
 
-    public String getWorkList() {
+    public String getWorkListPath() {
         return properties.getProperty("workList");
     }
 
-    public String getGarageList() {
-        return properties.getProperty("garageList");
+    public String getBoxListPath() {
+        return properties.getProperty("boxList");
     }
 }
