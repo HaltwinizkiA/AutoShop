@@ -1,7 +1,7 @@
 package ui.api;
 
 
-import java.awt.*;
+import ui.menu.Menu;
 
 public interface Build {
     public void buildMainMenu();

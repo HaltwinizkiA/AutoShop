@@ -6,8 +6,10 @@ import model.entity.car.Car;
 import model.entity.work.Work;
 import model.enums.OrderStatus;
 import ui.api.IAction;
+
 import ui.utils.TextWorker;
 import utils.FileWorker;
+
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -45,7 +47,9 @@ public class CopyOrderAndModify implements IAction {
                     String color = textWorker.getStringInput();
                     textWorker.println("enter number");
                     String number = textWorker.getStringInput();
-                    car = new Car(mark, model, color, number);
+                    textWorker.println("enter id ");
+                    Integer carId=textWorker.getIntInput();
+                    car = new Car(mark, model, color, number,carId);
                     break;
                 case 2:
                     textWorker.println("enter owner's name ");
@@ -100,8 +104,10 @@ public class CopyOrderAndModify implements IAction {
             }
             break;
         }
+        textWorker.println("enter id ");
+        Integer id=textWorker.getIntInput();
 
-        AutoShopAdministrator.getInstance().copyOrderAndModify(orderNum, car, ownersName, workList, masterName, boxNum, status, plannedStartDate);
+        AutoShopAdministrator.getInstance().copyOrderAndModify(orderNum,car,ownersName,workList,masterName,boxNum,status,plannedStartDate,price,id);
 
     }
 }

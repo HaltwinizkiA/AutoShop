@@ -5,7 +5,8 @@ package ui.menu.item;
 
 import ui.api.IAction;
 
-import java.awt.*;
+
+import ui.menu.Menu;
 import java.io.Serializable;
 
 public class MenuItem implements Serializable {

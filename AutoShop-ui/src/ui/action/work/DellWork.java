@@ -3,7 +3,8 @@ package ui.action.work;
 
 import facade.AutoShopAdministrator;
 import ui.api.IAction;
-import ui.utils.TextWorker;
+import utils.TextWorker;
+
 
 public class DellWork implements IAction {
     @Override

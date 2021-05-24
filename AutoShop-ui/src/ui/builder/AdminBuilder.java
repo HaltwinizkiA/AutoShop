@@ -2,9 +2,14 @@ package ui.builder;
 
 
 import ui.action.Exit;
+import ui.action.box.FreeUpSpaceBox;
+import ui.action.box.ModifyBoxCapacity;
+import ui.action.box.ViewFreeBox;
 import ui.action.master.*;
 import ui.action.order.*;
 import ui.action.work.AddWork;
+import ui.action.work.DellWork;
+import ui.action.work.ViewWorkList;
 import ui.api.Build;
 
 import ui.menu.item.MenuItem;
@@ -40,6 +45,11 @@ public class AdminBuilder implements Build, Serializable {
     }
 
     @Override
+    public Menu getRootMenu() {
+        return rootMenu;
+    }
+
+    @Override
     public void buildMainMenu() {
 
         List<MenuItem> sortOrderMenuItems = new ArrayList<>();
@@ -57,7 +67,7 @@ public class AdminBuilder implements Build, Serializable {
         orderMenuItems.add(new MenuItem("Canceled Order", new CanceledOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Close Order", new CloseOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Dell Order", new DellOrder(), orderMenu));
-        orderMenuItems.add(new MenuItem("Copy and modify order",new CopyOrderAndModify,orderMenu));
+        orderMenuItems.add(new MenuItem("Copy and modify order",new CopyOrderAndModify(),orderMenu));
         orderMenuItems.add(new MenuItem("Progress Order", new ProgressOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Transfer the order to the master", new TransferTheOrderToTheMaster(), orderMenu));
         orderMenuItems.add(new MenuItem("Modify Order Planed Start Date", new ModifyPlannedStartDate(), orderMenu));
@@ -107,9 +117,6 @@ public class AdminBuilder implements Build, Serializable {
 
     }
 
-    public Menu getRootMenu() {
-        return rootMenu;
-    }
 
     public void setRootMenu(Menu rootMenu) {
         this.rootMenu = rootMenu;

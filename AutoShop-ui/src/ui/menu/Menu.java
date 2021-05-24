@@ -1,6 +1,5 @@
 package ui.menu;
 
-
 import ui.menu.item.MenuItem;
 
 import java.io.Serializable;
