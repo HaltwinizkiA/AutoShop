@@ -1,6 +1,5 @@
 package facade;
 
-
 import configuration.AutoShopConfiguration;
 import model.comporators.master.MasterComparator;
 import model.comporators.order.OrderComparator;
@@ -72,8 +71,8 @@ public class AutoShopAdministrator {
         fileWorker.writer(workList, path);
     }
 
-    public void addMaster(String name, String dateObrith, String phoneNumber, Specialty specialty,Integer id) {
-        masterList.add(new Master(name, dateObrith, phoneNumber, specialty,id));
+    public void addMaster(String name, String dateObrith, String phoneNumber, Specialty specialty, Integer id) {
+        masterList.add(new Master(name, dateObrith, phoneNumber, specialty, id));
 
     }
 
@@ -122,7 +121,7 @@ public class AutoShopAdministrator {
         }
 
 
-        orderList.add(new Order(new Date(), plannedStartDate, car, owner, works, price,id));
+        orderList.add(new Order(new Date(), plannedStartDate, car, owner, works, price, id));
     }
 
     public void canceledOrder(int num) {
@@ -134,7 +133,7 @@ public class AutoShopAdministrator {
     }
 
     //TODO
-    public void copyOrderAndModify(int numOfCopyOrder, Car car, String ownersName, List<Work> work, String masterName, Integer numOfBox, OrderStatus status, Date plannedStartDate,Double price,Integer id) {
+    public void copyOrderAndModify(int numOfCopyOrder, Car car, String ownersName, List<Work> work, String masterName, Integer numOfBox, OrderStatus status, Date plannedStartDate, Double price, Integer id) {
         try {
             Order order = orderList.get(numOfCopyOrder).clone();
             if (car != null) {
@@ -160,7 +159,7 @@ public class AutoShopAdministrator {
             if (plannedStartDate != null) {
                 order.setPlannedStartDate(plannedStartDate);
             }
-            if (price!=null){
+            if (price != null) {
                 order.setPrice(price);
             }
             order.setId(id);
@@ -242,8 +241,8 @@ public class AutoShopAdministrator {
 
     }
 
-    public void addWork(String workingName, double price,Integer id) {
-        Work work = new Work(workingName, price,id);
+    public void addWork(String workingName, double price, Integer id) {
+        Work work = new Work(workingName, price, id);
         workList.add(work);
 
     }

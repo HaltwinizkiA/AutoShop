@@ -1,4 +1,5 @@
 package utils;
+
 import model.entity.master.Master;
 import model.entity.work.Work;
 import java.io.*;
@@ -72,7 +73,7 @@ public class FileWorker {
                 StringBuffer oneLine = new StringBuffer();
                 oneLine.append(master.getId());
                 oneLine.append(";" + master.getName());
-                oneLine.append(";" + master.g);
+                oneLine.append(";" + master.ge);
 
 
                 try {

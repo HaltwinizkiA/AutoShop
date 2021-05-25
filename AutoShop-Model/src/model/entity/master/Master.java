@@ -25,6 +25,14 @@ public class Master implements Serializable {
         this.id = id;
 
     }
+    public int getStatus(){
+        if (status){
+        return 1;}
+        else return 0;
+    }
+    public boolean isStatus() {
+        return status;
+    }
 
     public String getDateOfBirth() {
         return dateOfBirth;
@@ -38,9 +46,6 @@ public class Master implements Serializable {
         return phoneNumber;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
 
     public Integer getId() {
         return id;
@@ -50,11 +55,6 @@ public class Master implements Serializable {
         this.id = id;
     }
 
-    public int getStatus() {
-        if (status) {
-            return 1;
-        } else return 0;
-    }
 
     public Order getOrder() {
         return order;

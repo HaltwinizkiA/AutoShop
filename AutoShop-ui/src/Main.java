@@ -1,4 +1,6 @@
-import model.entity.master.Master;
+
+
+
 import model.entity.work.Work;
 
 import java.io.*;
@@ -18,6 +20,8 @@ public class Main {
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\37533\\Projects\\AutoShop\\dataBase\\csv\\work.csv"))){
             String line=br.readLine();
             line=br.readLine();
+            Master master=new Master("123","123","123", Specialty.ELECTRIC,123);
+            master.get
             while (line!=null){
             String[] redline=line.split(";");
             workList.add(new Work(redline[1],Double.parseDouble(redline[2]),Integer.parseInt(redline[0])));
