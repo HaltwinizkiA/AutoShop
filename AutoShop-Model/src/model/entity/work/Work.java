@@ -1,5 +1,6 @@
 package model.entity.work;
 
+
 import java.io.Serializable;
 
 public class Work implements Serializable {
@@ -13,6 +14,7 @@ public class Work implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+
     }
 
     @Override

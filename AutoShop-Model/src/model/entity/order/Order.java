@@ -25,6 +25,14 @@ public class Order implements Serializable, Cloneable {
     private Garage garage;
     private Integer id;
 
+    public Master getMaster() {
+        return master;
+    }
+
+    public Garage getGarage() {
+        return garage;
+    }
+
     public Integer getId() {
         return id;
     }

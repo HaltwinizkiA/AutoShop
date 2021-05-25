@@ -1,7 +1,13 @@
 package ui.utils;
 
+import model.entity.work.Work;
 import utils.FileWorker;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TextWorker {
@@ -48,5 +54,9 @@ public class TextWorker {
             worker.logger("wrong string input"+e);
             return null;
         }
+    }
+    public void CSVwriterWork(List<Work> workList){
+
+
     }
 }

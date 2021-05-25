@@ -3,8 +3,6 @@ import ui.menu.Menu;
 import utils.FileWorker;
 
 
-
-
 public class Navigator {
 
     private Menu currentMenu;

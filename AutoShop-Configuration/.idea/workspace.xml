@@ -7,44 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b610f80b-67bf-4edf-af61-89388613dd44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../dataBase/boxList.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dataBase/masterList.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dataBase/orderList.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dataBase/workList.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AutoShop_Configuration_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AutoShop_Configuration_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dataBase/csv/work.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../leha.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/AutoShop_Configuration_jar/AutoShop-Configuration.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AutoShop-Configuration/configuration/AutoShopConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutoShop-Configuration/configuration/AutoShopConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AutoShop-Configuration/resources/property.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutoShop-Configuration/resources/property.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configuration/AutoShopConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/AutoShopConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/property.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/property.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-facade/out/artifacts/AutoShop_facade_jar/AutoShop-facade.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-facade/out/production/AutoShop-facade/facade/AutoShopAdministrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-facade/out/production/AutoShop-facade/facade/AutoShopAdministrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-facade/src/facade/AutoShopAdministrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-facade/src/facade/AutoShopAdministrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/.idea/libraries/AutoShop_Configuration.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/.idea/libraries/AutoShop_Model.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/AutoShop-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/AutoShop-ui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoShop-Model/src/model/entity/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-Model/src/model/entity/car/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/library/AutoShop-Configuration.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/library/AutoShop-Configuration.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/action/Exit.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/action/Exit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/action/order/AddOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/action/order/AddOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/builder/AdminBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/builder/AdminBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/builder/ManagerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/builder/ManagerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/menu/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/menu/controller/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/menu/item/MenuItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/menu/item/MenuItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/navigator/Navigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/navigator/Navigator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/utils/TextWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/out/production/AutoShop-ui/ui/utils/TextWorker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/library/AutoShop-Configuration.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/library/AutoShop-Configuration.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/library/AutoShop-facade.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/library/AutoShop-facade.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/action/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/action/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/action/order/AddOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/action/order/AddOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/builder/AdminBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/builder/AdminBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/builder/ManagerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/builder/ManagerBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/menu/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/menu/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/menu/item/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/menu/item/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/runner/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/navigator/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/navigator/Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/ui/utils/TextWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/ui/utils/TextWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AutoShop-utils/AutoShop-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-utils/AutoShop-utils.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AutoShop-utils/src/utils/FileWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-utils/src/utils/FileWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../library/AutoShop-Configuration.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../library/AutoShop-Configuration.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/AutoShop-facade.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../library/AutoShop-facade.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +110,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AutoShop-facade" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
