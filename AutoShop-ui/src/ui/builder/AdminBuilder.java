@@ -2,13 +2,16 @@ package ui.builder;
 
 
 import ui.action.Exit;
+import ui.action.csv.*;
 import ui.action.master.*;
 import ui.action.order.*;
 import ui.action.box.*;
 import ui.action.work.*;
+
 import ui.api.Build;
+import ui.menu.Menu;
 import ui.menu.item.MenuItem;
-import ui.menu.*;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,7 @@ public class AdminBuilder implements Build, Serializable {
     private final Menu workMenu;
     private final Menu sortOrderMenu;
     private final Menu sortMasterMenu;
+    private final Menu csvMenu;
     private Menu rootMenu;
 
     public AdminBuilder() {
@@ -31,6 +35,7 @@ public class AdminBuilder implements Build, Serializable {
         this.sortMasterMenu = new Menu();
         this.rootMenu = new Menu();
         this.workMenu=new Menu();
+        this.csvMenu=new Menu();
     }
 
     public Menu getMainMenu() {
@@ -94,6 +99,15 @@ public class AdminBuilder implements Build, Serializable {
         masterMenuItems.add(new MenuItem("EXIT", new Exit(), masterMenu));
         masterMenu.setMenuItem(masterMenuItems);
 
+        List<MenuItem> csvMenuItems=new ArrayList<>();
+        csvMenu.setName("csv Menu");
+        csvMenuItems.add(new MenuItem("Order read",new OrderRead(),csvMenu));
+        csvMenuItems.add(new MenuItem("Order write",new OrderWrite(),csvMenu));
+        csvMenuItems.add(new MenuItem("Work read",new WorkRead(),csvMenu));
+        csvMenuItems.add(new MenuItem("Work write",new WorkWrite(),csvMenu));
+        csvMenuItems.add(new MenuItem("Master read",new MasterRead(),csvMenu));
+        csvMenuItems.add(new MenuItem("Master write",new MasterWrite(),csvMenu));
+
         List<MenuItem> mainMenuItems = new ArrayList<>();
         mainMenu.setName("Main menu");
         mainMenuItems.add(new MenuItem("Order Menu", null, orderMenu));
@@ -101,6 +115,7 @@ public class AdminBuilder implements Build, Serializable {
         mainMenuItems.add(new MenuItem("Master Menu", null, masterMenu));
         mainMenuItems.add(new MenuItem("Master Sort", null, sortMasterMenu));
         mainMenuItems.add(new MenuItem("Work menu",null,workMenu));
+        mainMenuItems.add(new MenuItem("csv Menu",null,csvMenu));
         mainMenuItems.add(new MenuItem("View Free Place", new ViewFreeBox(), mainMenu));
         mainMenuItems.add(new MenuItem("Free up space in the BOX", new FreeUpSpaceBox(), mainMenu));
         mainMenuItems.add(new MenuItem("Modify BOX Capacity", new ModifyBoxCapacity(), mainMenu));

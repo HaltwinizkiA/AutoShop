@@ -23,10 +23,10 @@ public class AutoShopAdministrator {
     private static AutoShopConfiguration autoShopConfiguration;
     private final TextWorker textWorker;
     private final FileWorker fileWorker;
-    private final List<Order> orderList;
-    private final List<Garage> boxList;
-    private final List<Master> masterList;
-    private final List<Work> workList;
+    private  List<Order> orderList;
+    private  List<Garage> boxList;
+    private List<Master> masterList;
+    private  List<Work> workList;
 
     private AutoShopAdministrator() {
         textWorker = new TextWorker();
@@ -45,6 +45,33 @@ public class AutoShopAdministrator {
             autoShopAdministrator = new AutoShopAdministrator();
         }
         return autoShopAdministrator;
+    }
+
+    public void csvMasterListWrite() {
+        fileWorker.csvMasterWriter(autoShopConfiguration.getMasterCSVPath(), masterList);
+        textWorker.println("master list csv  saved ");
+    }
+
+    public void csvMasterListRead() {
+        masterList = fileWorker.csvMasterReader(autoShopConfiguration.getMasterCSVPath());
+        viewAllMaster();
+    }
+    public void csvOrderListWrite(){
+        fileWorker.csvOrderWriter(autoShopConfiguration.getMasterCSVPath(),orderList);
+        textWorker.println("order list csv  saved ");
+    }
+    public void csvOrderListRead(){
+        fileWorker.csvOrderReader(autoShopConfiguration.getOrderCSVPath(),autoShopConfiguration.getWorkCSVPath(),autoShopConfiguration.getMasterCSVPath());
+        viewAllOrder();
+
+    }
+    public void csvWorkWrite(){
+        fileWorker.csvWorkWriter(autoShopConfiguration.getWorkListPath(),workList);
+        textWorker.println("work list csv  saved ");
+    }
+    public void csvWorkRead(){
+        fileWorker.csvWorkReader(autoShopConfiguration.getWorkListPath());
+        viewWorkList();
     }
 
     public List<Order> getOrderList() {
@@ -76,6 +103,11 @@ public class AutoShopAdministrator {
 
     }
 
+    public void transferCarInBox(Integer orderNum, Integer boxNum) {
+        boxList.get(boxNum).getCarsList().add(orderList.get(orderNum).getCar());
+
+    }
+
     public void dellMaster(int numOfDell) {
         masterList.remove(numOfDell);
 
@@ -96,13 +128,9 @@ public class AutoShopAdministrator {
     }
 
     public void viewMasterInOrder(int orderNum) {
-
-        for (Master master : masterList) {
-            if (master.getOrder().equals(orderList.get(orderNum))) {
-                textWorker.println(master.toString());
-            }
-        }
+        textWorker.println(orderList.get(orderNum).getMaster().toString());
     }
+
 
     public void addOrder(Date plannedStartDate, Car car, String owner, Integer id) {
         viewWorkList();
@@ -132,8 +160,8 @@ public class AutoShopAdministrator {
         orderList.get(num).setStatus(OrderStatus.CLOSED);
     }
 
-    //TODO
-    public void copyOrderAndModify(int numOfCopyOrder, Car car, String ownersName, List<Work> work, String masterName, Integer numOfBox, OrderStatus status, Date plannedStartDate, Double price, Integer id) {
+
+    public void copyOrderAndModify(int numOfCopyOrder, Car car, String ownersName, List<Work> work, String masterName, OrderStatus status, Date plannedStartDate, Double price, Integer id) {
         try {
             Order order = orderList.get(numOfCopyOrder).clone();
             if (car != null) {
@@ -150,9 +178,7 @@ public class AutoShopAdministrator {
                     order.setMaster(master);
                 }
             }
-            if (numOfBox != null) {
-                order.setGarage(boxList.get(numOfBox));
-            }
+
             if (status != null) {
                 order.setStatus(status);
             }
@@ -170,7 +196,7 @@ public class AutoShopAdministrator {
         }
 
 
-    }//TODO//todo
+    }
 
     public void dellOrder(int num) {
         orderList.remove(num);
@@ -201,7 +227,7 @@ public class AutoShopAdministrator {
     }
 
     public void orderTransferToTheMaster(int orderNum, int masterNum) {
-        masterList.get(masterNum).setOrder(orderList.get(orderNum));
+        orderList.get(orderNum).setMaster(masterList.get(masterNum));
     }
 
     public void viewAllOrder() {

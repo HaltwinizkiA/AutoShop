@@ -1,10 +1,20 @@
 package utils;
 
+
+import configuration.AutoShopConfiguration;
+import model.entity.car.Car;
 import model.entity.master.Master;
+import model.entity.order.Order;
 import model.entity.work.Work;
+import model.enums.Specialty;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -58,14 +68,15 @@ public class FileWorker {
                 }
             });
         } catch (Exception e) {
-            logger("ERROR csvWorkWriter "+e);
+            logger("ERROR csvWorkWriter " + e);
 
         }
 
     }
-    public void csvMasterWriter(String path, List<Master> masterList){
+
+    public void csvMasterWriter(String path, List<Master> masterList) {
         try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8))) {
-            String collum = " ID ;NAME ;PRICE ";
+            String collum = " ID ;NAME ;STATUS ;SPECIALTY ;PHONE NUMBER ;DATE OF BIRTH ";
 
             bw.write(collum);
             bw.newLine();
@@ -73,7 +84,10 @@ public class FileWorker {
                 StringBuffer oneLine = new StringBuffer();
                 oneLine.append(master.getId());
                 oneLine.append(";" + master.getName());
-                oneLine.append(";" + master.ge);
+                oneLine.append(";" + master.getStatus());
+                oneLine.append(";" + master.getSpecialty());
+                oneLine.append(";" + master.getPhoneNumber());
+                oneLine.append(";" + master.getDateOfBirth());
 
 
                 try {
@@ -85,7 +99,51 @@ public class FileWorker {
                 }
             });
         } catch (Exception e) {
-            logger("ERROR csvWorkWriter "+e);
+            logger("ERROR csvWorkWriter " + e);
+
+        }
+    }
+
+    public void csvOrderWriter(String path, List<Order> orderList) {
+        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8))) {
+            String collum = " ID ;OWNERS NAME ;STATUS ;CREATE DATE ;PLANNED START DATE ;COMPLETION DATE ;PRICE ;CAR ;WORK ;MASTER ID ";
+            bw.write(collum);
+            bw.newLine();
+            orderList.forEach(order -> {
+                StringBuffer oneLine = new StringBuffer();
+                oneLine.append(order.getId());
+                oneLine.append(";" + order.getOwnersName());
+                oneLine.append(";" + order.getStatus());
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+                oneLine.append(";" + simpleDateFormat.format(order.getCreateOrderDate()));
+                oneLine.append(";" + simpleDateFormat.format(order.getPlannedStartDate()));
+                if (order.getDateOfCompletion() != null) {
+                    oneLine.append(";" + simpleDateFormat.format(order.getDateOfCompletion()));
+                } else {
+                    oneLine.append(";" + null);
+                }
+                oneLine.append(";" + order.getPrice());
+                oneLine.append(";" + order.getCar().getMark() + "/" + order.getCar().getModel() + "/" + order.getCar().getColor() + "/" + order.getCar().getNumber() + "/" + order.getCar().getId());
+                oneLine.append(";");
+                order.getWork().forEach(work -> {
+                    oneLine.append(work.getId() + "/");
+                });
+                if (order.getMaster() != null) {
+                    oneLine.append(";" + order.getMaster().getId());
+                } else {
+                    oneLine.append(";" + null);
+                }
+
+                try {
+                    bw.write(oneLine.toString());
+                    bw.newLine();
+
+                } catch (Exception e) {
+                    logger("ERROR csv Order writer" + e);
+                }
+            });
+        } catch (Exception e) {
+            logger("ERROR csv  Order Writer " + e);
 
         }
     }
@@ -96,13 +154,89 @@ public class FileWorker {
             String line = br.readLine();
             line = br.readLine();
             while (line != null) {
-                String[] redline = line.split(";");
-                workList.add(new Work(redline[1], Double.parseDouble(redline[2]), Integer.parseInt(redline[0])));
+                String[] readline = line.split(";");
+                workList.add(new Work(readline[1], Double.parseDouble(readline[2]), Integer.parseInt(readline[0])));
                 line = br.readLine();
             }
             return workList;
         } catch (Exception e) {
-            logger("Error csvWorkReader :"+e);
+            logger("Error csvWorkReader :" + e);
+            return null;
+        }
+    }
+
+    public List<Master> csvMasterReader(String path) {
+        List<Master> masterList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\37533\\Projects\\AutoShop\\dataBase\\csv\\work.csv"))) {
+            String line = br.readLine();
+            line = br.readLine();
+            while (line != null) {
+                String[] readline = line.split(";");
+                masterList.add(new Master(readline[1], readline[6], readline[5], Specialty.valueOf(readline[3]), Integer.parseInt(readline[0])));
+                line = br.readLine();
+            }
+
+            return masterList;
+        } catch (Exception e) {
+            logger("Error csvWorkReader :" + e);
+            return null;
+        }
+
+    }
+
+    public List<Order> csvOrderReader(String orderPath, String workPath,String masterPath) {
+        List<Order> orderList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(orderPath))) {
+            String line = br.readLine();
+            line = br.readLine();
+
+            while (line != null) {
+                String[] readline = line.split(";");
+                List<Work> workList = new ArrayList<>();
+                String[] workId = readline[8].split("/");
+                for (String id : workId) {
+                    csvWorkReader(workPath).forEach(work -> {
+                        if (work.getId() == Integer.parseInt(id)) {
+                            workList.add(work);
+                        }
+                    });
+
+                }
+                String[] car = readline[7].split("/");
+                DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+                dateFormat.setLenient(false);
+                Date plannedStartDate = null;
+                Date createOrderDate = null;
+                Date completedDate = null;
+                try {
+                    plannedStartDate = dateFormat.parse(readline[3]);
+                    createOrderDate = dateFormat.parse(readline[4]);
+                    if (!readline[5].equals("null")) {
+                        completedDate = dateFormat.parse(readline[5]);
+                    }
+
+                } catch (ParseException e) {
+                    logger(e.toString());
+                }
+
+                Order order = new Order(createOrderDate, plannedStartDate, new Car(car[0], car[1], car[2], car[3], Integer.parseInt(car[4])), readline[1], workList, Double.parseDouble(readline[6]), Integer.parseInt(readline[0]));
+                if (!readline[9].equals("null")) {
+                    List<Master> masterList = csvMasterReader(masterPath);
+                    masterList.forEach(master -> {
+                        if (master.getId() == Integer.parseInt(readline[9])) ;
+                        order.setMaster(master);
+                    });
+
+                }
+                orderList.add(order);
+
+//Order(Date createOrderDate, Date plannedStartDate, Car car, String ownersName, List<Work> work, double price, Integer id)
+                line = br.readLine();
+            }
+            return orderList;
+
+        } catch (Exception e) {
+            logger("Error csv Order Reader :" + e);
             return null;
         }
     }

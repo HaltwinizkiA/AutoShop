@@ -3,9 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_facade_jar</output-path>
     <root id="archive" name="AutoShop-facade.jar">
       <element id="module-output" name="AutoShop-facade" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../library/AutoShop-Model.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../library/AutoShop-Configuration.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../library/AutoShop-utils.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

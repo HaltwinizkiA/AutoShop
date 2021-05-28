@@ -36,7 +36,7 @@ public class CopyOrderAndModify implements IAction {
         int orderNum = textWorker.getIntInput();
 
         while (true) {
-            textWorker.println("enter field number to modify \n1) car\n2) owner's name\n3) work list\n4) master\n5) box num\n6) status\n7) planned start date /");
+            textWorker.println("enter field number to modify \n1) car\n2) owner's name\n3) work list\n4) master\n5) status\n6) planned start date /");
             switch (textWorker.getIntInput()) {
                 case 1:
                     textWorker.println("enter mark");
@@ -77,10 +77,6 @@ public class CopyOrderAndModify implements IAction {
                     masterName = textWorker.getStringInput();
                     break;
                 case 5:
-                    textWorker.println("enter box num");
-                    boxNum = textWorker.getIntInput();
-                    break;
-                case 6:
                     textWorker.println("select status:");
                     OrderStatus[] orderStatuses = OrderStatus.values();
                     for (int i = 0; i < orderStatuses.length; i++) {
@@ -89,7 +85,7 @@ public class CopyOrderAndModify implements IAction {
                     status = orderStatuses[textWorker.getIntInput()];
 
                     break;
-                case 7:
+                case 6:
                     textWorker.println("planned start work date in format - HH:mm dd/MM/yy ");
                     String date=textWorker.getStringLine();
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yy");
@@ -107,7 +103,7 @@ public class CopyOrderAndModify implements IAction {
         textWorker.println("enter id ");
         Integer id=textWorker.getIntInput();
 
-        AutoShopAdministrator.getInstance().copyOrderAndModify(orderNum,car,ownersName,workList,masterName,boxNum,status,plannedStartDate,price,id);
+        AutoShopAdministrator.getInstance().copyOrderAndModify(orderNum,car,ownersName,workList,masterName,status,plannedStartDate,price,id);
 
     }
 }

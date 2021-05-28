@@ -1,11 +1,14 @@
 package ui.menu.controller;
 
 import ui.api.Build;
-import ui.builder.*;
+
+import ui.builder.AdminBuilder;
+import ui.builder.ManagerBuilder;
+import ui.builder.MasterBuilder;
+import ui.navigator.Navigator;
 import ui.utils.TextWorker;
-import ui.navigator.*;
-import java.util.Scanner;
-import java.util.WeakHashMap;
+
+
 
 public class MenuController {
     public void run() {

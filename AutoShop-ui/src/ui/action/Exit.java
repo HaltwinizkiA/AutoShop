@@ -4,6 +4,7 @@ package ui.action;
 
 import configuration.AutoShopConfiguration;
 import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
 import ui.menu.controller.MenuController;
 

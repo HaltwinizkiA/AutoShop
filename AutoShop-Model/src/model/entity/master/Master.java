@@ -1,8 +1,6 @@
 package model.entity.master;
 
 
-import model.entity.order.Order;
-import model.enums.OrderStatus;
 import model.enums.Specialty;
 
 import java.io.Serializable;
@@ -12,8 +10,7 @@ public class Master implements Serializable {
     private final String dateOfBirth;
     private final Specialty specialty;
     private final String phoneNumber;
-    private Order order;
-    private boolean status;
+    private final boolean status;
     private Integer id;
 
     public Master(String name, String dateOfBirth, String phoneNumber, Specialty specialty, Integer id) {
@@ -25,11 +22,13 @@ public class Master implements Serializable {
         this.id = id;
 
     }
-    public int getStatus(){
-        if (status){
-        return 1;}
-        else return 0;
+
+    public int getStatus() {
+        if (status) {
+            return 1;
+        } else return 0;
     }
+
     public boolean isStatus() {
         return status;
     }
@@ -56,23 +55,13 @@ public class Master implements Serializable {
     }
 
 
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-        this.order.setStatus(OrderStatus.IN_PROGRESS);
-        this.status = true;
-    }
-
     public String getName() {
         return name;
     }
 
     @Override
     public String toString() {
-        return "Master name: " + name + "/ date of birth: " + dateOfBirth + "/ phoneNumber: " + phoneNumber + "/ specialty: " + specialty + "/Order in performance: " + order;
+        return "Master name: " + name + "/ date of birth: " + dateOfBirth + "/ phoneNumber: " + phoneNumber + "/ specialty: " + specialty;
     }
 }
 

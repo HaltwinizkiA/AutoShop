@@ -1,8 +1,8 @@
 package ui.action.box;
 
-
-import facade.AutoShopAdministrator;
 import ui.api.IAction;
+import facade.AutoShopAdministrator;
+
 import utils.TextWorker;
 
 
