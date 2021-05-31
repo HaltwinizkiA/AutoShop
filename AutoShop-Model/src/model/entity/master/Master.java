@@ -1,11 +1,14 @@
 package model.entity.master;
 
 
+import annotations.CsvEntity;
+import annotations.CsvProperty;
 import model.enums.Specialty;
 
 import java.io.Serializable;
-
+@CsvEntity(fileName = "C:\\\\Users\\\\37533\\\\Projects\\\\AutoShop\\\\dataBase\\\\csv\\\\masters.csv",separator = ";")
 public class Master implements Serializable {
+    @CsvProperty(colomnNuber = )
     private final String name;
     private final String dateOfBirth;
     private final Specialty specialty;
