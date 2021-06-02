@@ -56,19 +56,23 @@ public class AutoShopAdministrator {
         masterList = fileWorker.csvMasterReader(autoShopConfiguration.getMasterCSVPath());
         viewAllMaster();
     }
+
     public void csvOrderListWrite(){
         fileWorker.csvOrderWriter(autoShopConfiguration.getMasterCSVPath(),orderList);
         textWorker.println("order list csv  saved ");
     }
+
     public void csvOrderListRead(){
         fileWorker.csvOrderReader(autoShopConfiguration.getOrderCSVPath(),autoShopConfiguration.getWorkCSVPath(),autoShopConfiguration.getMasterCSVPath());
         viewAllOrder();
 
     }
+
     public void csvWorkWrite(){
         fileWorker.csvWorkWriter(autoShopConfiguration.getWorkListPath(),workList);
         textWorker.println("work list csv  saved ");
     }
+
     public void csvWorkRead(){
         fileWorker.csvWorkReader(autoShopConfiguration.getWorkListPath());
         viewWorkList();
@@ -131,7 +135,6 @@ public class AutoShopAdministrator {
         textWorker.println(orderList.get(orderNum).getMaster().toString());
     }
 
-
     public void addOrder(Date plannedStartDate, Car car, String owner, Integer id) {
         viewWorkList();
         List<Work> works = new ArrayList<>();
@@ -159,7 +162,6 @@ public class AutoShopAdministrator {
     public void closedOrder(int num) {
         orderList.get(num).setStatus(OrderStatus.CLOSED);
     }
-
 
     public void copyOrderAndModify(int numOfCopyOrder, Car car, String ownersName, List<Work> work, String masterName, OrderStatus status, Date plannedStartDate, Double price, Integer id) {
         try {

@@ -3,17 +3,25 @@ package model.entity.master;
 
 import annotations.CsvEntity;
 import annotations.CsvProperty;
+import annotations.Property;
+import model.entity.Entity;
 import model.enums.Specialty;
 
 import java.io.Serializable;
-@CsvEntity(fileName = "C:\\\\Users\\\\37533\\\\Projects\\\\AutoShop\\\\dataBase\\\\csv\\\\masters.csv",separator = ";")
-public class Master implements Serializable {
-    @CsvProperty(colomnNuber = )
+
+@CsvEntity(fileName = "C:\\Users\\37533\\Projects\\AutoShop\\dataBase\\reflection\\csv\\reflectMasters.csv", separator = ";")
+public class Master extends Entity {
+    @CsvProperty(colomnNuber = 1, keyField = "name")
     private final String name;
+    @CsvProperty(colomnNuber = 5, keyField = "date of birth")
     private final String dateOfBirth;
+    @CsvProperty(colomnNuber = 3, keyField = "specialty")
     private final Specialty specialty;
+    @CsvProperty(colomnNuber = 4, keyField = "phone number")
     private final String phoneNumber;
+    @CsvProperty(colomnNuber = 2, keyField = "status")
     private final boolean status;
+    @CsvProperty(colomnNuber = 0, keyField = "id")
     private Integer id;
 
     public Master(String name, String dateOfBirth, String phoneNumber, Specialty specialty, Integer id) {
@@ -48,11 +56,12 @@ public class Master implements Serializable {
         return phoneNumber;
     }
 
-
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }

@@ -1,18 +1,22 @@
 package model.entity.car;
 
+import model.entity.Entity;
+
 import java.io.Serializable;
 
-public class Car implements Serializable {
+public class Car extends Entity {
     private final String mark;
     private final String model;
     private final String color;
     private final String number;
     private Integer id;
 
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }

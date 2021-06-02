@@ -1,6 +1,10 @@
 package model.entity.order;
 
 
+import annotations.CsvEntity;
+import annotations.CsvProperty;
+import annotations.Property;
+import model.entity.Entity;
 import model.entity.car.Car;
 import model.entity.master.Master;
 import model.entity.work.Work;
@@ -9,17 +13,27 @@ import model.enums.OrderStatus;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
-public class Order implements Serializable, Cloneable {
+@CsvEntity(fileName = "C:\\Users\\37533\\Projects\\AutoShop\\dataBase\\reflection\\csv\\reflectOrders.csv", separator = ";")
+public class Order extends Entity implements Cloneable {
+    @CsvProperty(colomnNuber = 4, keyField = "date of create",property = Property.DateProperty)
     private Date createOrderDate;
+    @CsvProperty(colomnNuber = 1, keyField = "car",property = Property.GetIdProperty)
     private Car car;
+    @CsvProperty(colomnNuber = 2, keyField = "owners name")
     private String ownersName;
+    @CsvProperty(colomnNuber = 7, keyField = "works id",property = Property.ListProperty)
     private List<Work> work;
+    @CsvProperty(colomnNuber = 5, keyField = "price")
     private double price;
+    @CsvProperty(colomnNuber = 9, keyField = "completion date",property = Property.DateProperty)
     private Date dateOfCompletion;
+    @CsvProperty(colomnNuber = 6, keyField = "planned start date",property = Property.DateProperty)
     private Date plannedStartDate;
+    @CsvProperty(colomnNuber = 3, keyField = "status")
     private OrderStatus status;
+    @CsvProperty(colomnNuber = 8, keyField = "Master id",property = Property.GetIdProperty)
     private Master master;
+    @CsvProperty(colomnNuber = 0, keyField = "id")
     private Integer id;
 
     public Order(Date createOrderDate, Date plannedStartDate, Car car, String ownersName, List<Work> work, double price, Integer id) {
@@ -41,11 +55,11 @@ public class Order implements Serializable, Cloneable {
     public void setMaster(Master master) {
         this.master = master;
     }
-
+    @Override
     public Integer getId() {
         return id;
     }
-
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }

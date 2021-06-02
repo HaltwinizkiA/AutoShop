@@ -20,7 +20,6 @@ import java.util.Properties;
 
 public class FileWorker {
 
-
     public Properties getProperties(String path) {
         try (FileInputStream inputStream = new FileInputStream(path)) {
             Properties properties = new Properties();
@@ -37,17 +36,25 @@ public class FileWorker {
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
             objectOutputStream.writeObject(object);
             objectOutputStream.close();
-
-
         } catch (Exception e) {
             logger(e.toString());
-
-
         }
-
     }
 
-    public void csvWorkWriter(String path, List<Work> workList) {
+    public void csvWorkWriter(String path, List<Work> ImportWorkList) {
+        List<Work> newWorks = List.copyOf(ImportWorkList);
+        List<Work> workList = csvWorkReader(path);
+
+        for (int i = 0; i < workList.size() & i < workList.size(); i++) {
+            for (int j = 0; j < workList.size(); j++) {
+                if (workList.get(i).getId() == newWorks.get(j).getId()) {
+                    workList.set(i, newWorks.get(j));
+                    newWorks.remove(j);
+                }
+            }
+        }
+        workList.addAll(newWorks);
+
 
         try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8))) {
             String collum = " ID ;NAME ;PRICE ";
@@ -58,11 +65,9 @@ public class FileWorker {
                 oneLine.append(work.getId());
                 oneLine.append(";" + work.getName());
                 oneLine.append(";" + work.getPrice());
-
                 try {
                     bw.write(oneLine.toString());
                     bw.newLine();
-
                 } catch (Exception e) {
                     System.out.println("_" + e);
                 }
@@ -74,7 +79,20 @@ public class FileWorker {
 
     }
 
-    public void csvMasterWriter(String path, List<Master> masterList) {
+    public void csvMasterWriter(String path, List<Master> ImportMasterList) {
+        List<Master> newWorks = List.copyOf(ImportMasterList);
+        List<Master> masterList = csvMasterReader(path);
+        for (int i = 0; i < masterList.size() & i < masterList.size(); i++) {
+            for (int j = 0; j < masterList.size(); j++) {
+                if (masterList.get(i).getId() == newWorks.get(j).getId()) {
+                    masterList.set(i, newWorks.get(j));
+                    newWorks.remove(j);
+                }
+
+            }
+        }
+        masterList.addAll(newWorks);
+
         try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8))) {
             String collum = " ID ;NAME ;STATUS ;SPECIALTY ;PHONE NUMBER ;DATE OF BIRTH ";
 
@@ -89,7 +107,6 @@ public class FileWorker {
                 oneLine.append(";" + master.getPhoneNumber());
                 oneLine.append(";" + master.getDateOfBirth());
 
-
                 try {
                     bw.write(oneLine.toString());
                     bw.newLine();
@@ -104,7 +121,21 @@ public class FileWorker {
         }
     }
 
-    public void csvOrderWriter(String path, List<Order> orderList) {
+    public void csvOrderWriter(String path, List<Order> ImportOrderList) {
+        AutoShopConfiguration autoShopConfiguration = new AutoShopConfiguration();
+        List<Order> newWorks = List.copyOf(ImportOrderList);
+        List<Order> orderList = csvOrderReader(path, autoShopConfiguration.getWorkCSVPath(), autoShopConfiguration.getMasterCSVPath());
+        for (int i = 0; i < orderList.size() & i < orderList.size(); i++) {
+            for (int j = 0; j < orderList.size(); j++) {
+                if (orderList.get(i).getId() == newWorks.get(j).getId()) {
+                    orderList.set(i, newWorks.get(j));
+                    newWorks.remove(j);
+                }
+
+            }
+        }
+        orderList.addAll(newWorks);
+
         try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8))) {
             String collum = " ID ;OWNERS NAME ;STATUS ;CREATE DATE ;PLANNED START DATE ;COMPLETION DATE ;PRICE ;CAR ;WORK ;MASTER ID ";
             bw.write(collum);
@@ -175,7 +206,6 @@ public class FileWorker {
                 masterList.add(new Master(readline[1], readline[6], readline[5], Specialty.valueOf(readline[3]), Integer.parseInt(readline[0])));
                 line = br.readLine();
             }
-
             return masterList;
         } catch (Exception e) {
             logger("Error csvWorkReader :" + e);
@@ -184,7 +214,7 @@ public class FileWorker {
 
     }
 
-    public List<Order> csvOrderReader(String orderPath, String workPath,String masterPath) {
+    public List<Order> csvOrderReader(String orderPath, String workPath, String masterPath) {
         List<Order> orderList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(orderPath))) {
             String line = br.readLine();
@@ -241,7 +271,6 @@ public class FileWorker {
         }
     }
 
-
     public <T> T lehaReader(String path) {
         try (FileInputStream fileInputStream = new FileInputStream(path);
              ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
@@ -257,20 +286,16 @@ public class FileWorker {
 
     }
 
-
     public Object reader(String path) {
         try (FileInputStream fileInputStream = new FileInputStream(path);
              ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-
             Object object = objectInputStream.readObject();
             return object;
         } catch (Exception e) {
-
             logger(e.toString());
             return null;
         }
     }
-
 
     public boolean logger(String string) {
         File file = new File("C:\\Users\\37533\\Projects\\AutoShop\\logs.txt");
@@ -281,9 +306,5 @@ public class FileWorker {
             e.printStackTrace();
             return false;
         }
-
-
     }
-
-
 }

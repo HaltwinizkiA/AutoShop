@@ -1,4 +1,4 @@
- ID ;NAME ;PRICE 
-1;change oil;40.5
-2;change wheels;20.0
-3;paint;100.0
+id;name;price;
+44;piska;12.0;
+2;popka;24.0;
+1;soska;23.0;

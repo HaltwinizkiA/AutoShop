@@ -7,10 +7,6 @@ public enum OrderStatus implements Serializable {
     CLOSED,
     CANCELED,
     ACCEPTED,
-    ;
-
-    @Override
-    public String toString() {
-        return "Order Status is "+this.name();
-    }
 }
+
+
