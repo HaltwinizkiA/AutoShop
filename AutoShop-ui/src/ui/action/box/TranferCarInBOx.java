@@ -1,8 +1,10 @@
 package ui.action.box;
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
-import utils.TextWorker;
+import ui.connect.Connect;
+import ui.utils.TextWorker;
+
 
 public class TranferCarInBOx implements IAction {
 
@@ -10,9 +12,10 @@ public class TranferCarInBOx implements IAction {
     public void execute() {
         TextWorker textWorker = new TextWorker();
         textWorker.println("enter box num");
-        int boxNum=textWorker.getIntInput();
+        String boxNum=textWorker.getStringInput();
         textWorker.println("enter order num");
-        int orderNum=textWorker.getIntInput();
-        AutoShopAdministrator.getInstance().transferCarInBox(boxNum,orderNum);
+        String orderNum=textWorker.getStringInput();
+
+        Connect.getInstance().send("transferCarInBox",boxNum,orderNum);
     }
 }

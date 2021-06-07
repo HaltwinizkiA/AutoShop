@@ -1,7 +1,7 @@
 package ui.navigator;
 
 import ui.menu.Menu;
-import utils.FileWorker;
+import ui.utils.TextWorker;
 
 
 public class Navigator {
@@ -32,8 +32,8 @@ public class Navigator {
             this.currentMenu.getMenuItem().get(index).doAction();
             setCurrentMenu(this.currentMenu.getMenuItem().get(index).getNextMenu());
         } catch (Exception e) {
-            FileWorker worker = new FileWorker();
-            worker.logger(e.toString());
+            TextWorker textWorker=new TextWorker();
+            textWorker.println("navigator error"+e);
         }
     }
 

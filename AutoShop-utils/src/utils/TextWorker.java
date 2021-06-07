@@ -4,8 +4,8 @@ package utils;
 import java.util.Scanner;
 
 public class TextWorker {
-    Scanner scanner;
-    FileWorker worker;
+    private Scanner scanner;
+    private FileWorker worker;
 
     public TextWorker() {
         scanner=new Scanner(System.in);

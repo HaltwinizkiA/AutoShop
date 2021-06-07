@@ -131,7 +131,6 @@ public class FileWorker {
                     orderList.set(i, newWorks.get(j));
                     newWorks.remove(j);
                 }
-
             }
         }
         orderList.addAll(newWorks);

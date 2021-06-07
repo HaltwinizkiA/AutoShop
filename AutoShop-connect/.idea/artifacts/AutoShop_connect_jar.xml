@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AutoShop-connect:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_connect_jar</output-path>
+    <root id="archive" name="AutoShop-connect.jar">
+      <element id="module-output" name="AutoShop-connect" />
+    </root>
+  </artifact>
+</component>

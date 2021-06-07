@@ -1,19 +1,22 @@
 package ui.action.work;
 
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
-import utils.TextWorker;
+import ui.connect.Connect;
+import ui.utils.TextWorker;
 
 
 public class DellWork implements IAction {
     @Override
     public void execute() {
         TextWorker worker=new TextWorker();
-        AutoShopAdministrator.getInstance().viewWorkList();
+        Connect.getInstance().send("viewWorkList");
         worker.println("enter work num");
-        int num=worker.getIntInput();
-        AutoShopAdministrator.getInstance().dellWork(num);
+        String num=worker.getStringLine();
+        Connect.getInstance().send("viewWorkList");
+        Connect.getInstance().send("dellWork",num);
+
 
     }
 }

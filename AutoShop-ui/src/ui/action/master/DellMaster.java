@@ -1,10 +1,9 @@
 package ui.action.master;
 
 
-import facade.AutoShopAdministrator;
-
 import ui.api.IAction;
-import utils.TextWorker;
+import ui.connect.Connect;
+import ui.utils.TextWorker;
 
 
 public class DellMaster implements IAction {
@@ -12,11 +11,11 @@ public class DellMaster implements IAction {
     @Override
     public void execute() {
         TextWorker worker=new TextWorker();
-        AutoShopAdministrator.getInstance().viewAllMaster();
+        Connect.getInstance().send("viewAllMaster");
         worker.println("enter master num");
-        int num=worker.getIntInput();
+        String num=worker.getStringInput();
 
-        AutoShopAdministrator.getInstance().dellMaster(num);
+        Connect.getInstance().send("dellMaster",num);
 
 
     }

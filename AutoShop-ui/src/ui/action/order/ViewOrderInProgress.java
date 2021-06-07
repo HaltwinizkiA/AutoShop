@@ -1,12 +1,14 @@
 package ui.action.order;
 
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
+import ui.connect.Connect;
 
 public class ViewOrderInProgress implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().viewOrderInProgress();
+        Connect.getInstance().send("viewOrderInProgress");
+
     }
 }

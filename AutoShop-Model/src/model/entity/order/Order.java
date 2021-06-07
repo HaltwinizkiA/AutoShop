@@ -17,7 +17,7 @@ import java.util.List;
 public class Order extends Entity implements Cloneable {
     @CsvProperty(colomnNuber = 4, keyField = "date of create",property = Property.DateProperty)
     private Date createOrderDate;
-    @CsvProperty(colomnNuber = 1, keyField = "car",property = Property.GetIdProperty)
+    @CsvProperty(colomnNuber = 1, keyField = "car",property = Property.CarProperty)
     private Car car;
     @CsvProperty(colomnNuber = 2, keyField = "owners name")
     private String ownersName;
@@ -47,6 +47,30 @@ public class Order extends Entity implements Cloneable {
         status = OrderStatus.ACCEPTED;
 
     }
+
+    public Order(Date createOrderDate, Date plannedStartDate, Car car, String ownersName, Integer id) {
+        this.createOrderDate = createOrderDate;
+        this.id = id;
+        this.plannedStartDate = plannedStartDate;
+        this.car = car;
+        this.ownersName = ownersName;
+        this.work = null;
+        this.price = price;
+        status = OrderStatus.ACCEPTED;
+
+    }
+    public Order() {
+        this.createOrderDate = null;
+        this.id = null;
+        this.plannedStartDate = null;
+        this.car = null;
+        this.ownersName = null;
+        this.work = null;
+        this.price = 0;
+        status = null;
+
+    }
+
 
     public Master getMaster() {
         return master;

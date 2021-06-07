@@ -1,8 +1,9 @@
 package ui.action.work;
 
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
+import ui.connect.Connect;
 import ui.utils.TextWorker;
 
 
@@ -10,14 +11,15 @@ public class AddWork implements IAction {
     @Override
     public void execute() {
         TextWorker worker=new TextWorker();
-        AutoShopAdministrator.getInstance().viewWorkList();
+                Connect.getInstance().send("viewWorkList");
         worker.println("enter work name");
         String workName=worker.getStringInput();
         worker.println("enter price ");
-        double price=worker.getDoubleInput();
+        String price=worker.getStringInput();
         worker.println("enter id ");
-        Integer id=worker.getIntInput();
-        AutoShopAdministrator.getInstance().addWork(workName,price,id);
+        String id=worker.getStringInput();
+        Connect.getInstance().send("addWork",workName,price,id);
+
 
 
 

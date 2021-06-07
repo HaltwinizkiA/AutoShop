@@ -1,14 +1,16 @@
 package ui.action.order;
 
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
+import ui.connect.Connect;
 
 public class SortOrderPlannedStarDate implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().ordersSortPlannedStartDate();
-        AutoShopAdministrator.getInstance().viewAllOrder();
+        Connect.getInstance().send("ordersSortPlannedStartDate");
+        Connect.getInstance().send("viewAllOrder");
+
         }
 
     }

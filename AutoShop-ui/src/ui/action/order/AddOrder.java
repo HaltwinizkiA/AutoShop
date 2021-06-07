@@ -1,23 +1,19 @@
 package ui.action.order;
 
 
-import facade.AutoShopAdministrator;
 
-import model.entity.car.Car;
 import ui.api.IAction;
-import utils.FileWorker;
+import ui.connect.Connect;
 import ui.utils.TextWorker;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+
+
+
 
 public class AddOrder implements IAction {
     @Override
     public void execute() {
-        FileWorker worker=new FileWorker();
         TextWorker textWorker=new TextWorker();
-        AutoShopAdministrator.getInstance().viewAllOrder();
+        Connect.getInstance().send("viewAllOrder");
         textWorker.println("enter car:\nmark-");
         String mark = textWorker.getStringInput();
         textWorker.println("model");
@@ -26,27 +22,28 @@ public class AddOrder implements IAction {
         String color = textWorker.getStringInput();
         textWorker.println("number");
         textWorker.println("id");
-        Integer carId=textWorker.getIntInput();
+        String carId=textWorker.getStringInput();
         String number = textWorker.getStringInput();
         textWorker.println("owner name:");
         String owner = textWorker.getStringInput();
         textWorker.println("planned start work date in format - HH:mm dd/MM/yy ");
         String date = textWorker.getStringLine();
-        Car car = new Car(mark, model, color, number,carId);
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm dd/MM/yy");
-        dateFormat.setLenient(false);
-        Date plannedStartDate = null;
-        try {
-            plannedStartDate = dateFormat.parse(date);
 
-        } catch (ParseException e) {
-            worker.logger("add order exception" + e);
-        }
+
         textWorker.println("enter id ");
-        Integer id=textWorker.getIntInput();
+        String id=textWorker.getStringLine();
+        Connect.getInstance().send("addOrder",date,mark,model,color,number,carId,owner,id);
+        Connect.getInstance().send("viewWorkList");
+        textWorker.println("enter works numbers ");
+        String line="";
+        while (textWorker.getStringLine()!=null){
+            line=line+"/"+textWorker.getStringLine();
+        }
+        String[] arguments=line.split("/");
+        Connect.getInstance().send("addWorkToOrder",arguments);
 
-        AutoShopAdministrator.getInstance().addOrder(plannedStartDate,car,owner,id);
-        textWorker.println("order created");
+
+
 
 
 

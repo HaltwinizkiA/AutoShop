@@ -1,13 +1,12 @@
 package ui.action.order;
 
 
-import facade.AutoShopAdministrator;
 import ui.api.IAction;
+import ui.connect.Connect;
 
 public class ViewAllOrders implements IAction {
     @Override
     public void execute() {
-
-        AutoShopAdministrator.getInstance().viewAllOrder();
+        Connect.getInstance().send("viewAllOrder");
     }
 }

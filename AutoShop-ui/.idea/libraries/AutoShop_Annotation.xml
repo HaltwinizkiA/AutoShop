@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="AutoShop-Annotation">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/library/AutoShop-Annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/library/AutoShop-Configuration.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/library/AutoShop-connect.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/library/AutoShop-facade.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/library/AutoShop-Model.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/library/AutoShop-utils.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,22 +1,23 @@
 package ui.action.box;
 
 
-import facade.AutoShopAdministrator;
+
 
 import ui.api.IAction;
-import utils.TextWorker;
+import ui.connect.Connect;
+import ui.utils.TextWorker;
 
 
 public class ModifyBoxCapacity implements IAction {
     @Override
     public void execute() {
         TextWorker textWorker = new TextWorker();
-        AutoShopAdministrator.getInstance().viewAllCarInBox();
+        Connect.getInstance().send("viewAllCarInBox");
         textWorker.println("enter box num");
-        int boxNum=textWorker.getIntInput();
+        String boxNum=textWorker.getStringInput();
         textWorker.println("enter new capacity");
-        int newCapacity=textWorker.getIntInput();
-        AutoShopAdministrator.getInstance().modifyBoxCapacity(boxNum,newCapacity);
+        String newCapacity=textWorker.getStringInput();
+        Connect.getInstance().send("modifyBoxCapacity",boxNum,newCapacity);
 
     }
 }

@@ -21,6 +21,11 @@ public class Work extends Entity {
         this.price = price;
         this.id = id;
     }
+    public Work() {
+        this.name = null;
+        this.price = 0;
+        this.id = null;
+    }
 
     @Override
     public Integer getId() {

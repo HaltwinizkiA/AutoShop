@@ -24,6 +24,20 @@ public class Master extends Entity {
     @CsvProperty(colomnNuber = 0, keyField = "id")
     private Integer id;
 
+    public Master(String name, String dateOfBirth, String phoneNumber, Specialty specialty, Integer id, String satus) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
+        this.specialty = specialty;
+        if (satus.equals("true")){
+            this.status=true;
+        }else {
+            this.status=false;
+        }
+        this.id = id;
+
+    }
+
     public Master(String name, String dateOfBirth, String phoneNumber, Specialty specialty, Integer id) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -31,6 +45,16 @@ public class Master extends Entity {
         this.specialty = specialty;
         this.status = false;
         this.id = id;
+
+    }
+
+    public Master() {
+        this.name = null;
+        this.dateOfBirth = null;
+        this.phoneNumber = null;
+        this.specialty = null;
+        this.status = false;
+        this.id = 0;
 
     }
 

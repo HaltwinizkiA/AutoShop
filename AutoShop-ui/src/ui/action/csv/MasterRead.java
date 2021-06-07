@@ -1,11 +1,12 @@
 package ui.action.csv;
 
-import facade.AutoShopAdministrator;
-import ui.api.IAction;
+
+import ui.api.*;
+import ui.connect.Connect;
 
 public class MasterRead implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().csvMasterListRead();
+        Connect.getInstance().send("csvMasterListRead");
     }
 }

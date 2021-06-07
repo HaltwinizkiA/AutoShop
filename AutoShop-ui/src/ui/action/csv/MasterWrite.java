@@ -1,12 +1,13 @@
 package ui.action.csv;
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
+import ui.connect.Connect;
 
 public class MasterWrite implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().csvMasterListWrite();
 
+        Connect.getInstance().send("csvMasterListWrite");
     }
 }

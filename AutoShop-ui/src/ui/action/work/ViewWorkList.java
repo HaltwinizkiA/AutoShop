@@ -1,16 +1,15 @@
 package ui.action.work;
 
-
-import facade.AutoShopAdministrator;
 import ui.api.IAction;
-import utils.TextWorker;
+import ui.connect.Connect;
+
 
 
 public class ViewWorkList implements IAction {
     @Override
     public void execute() {
-        TextWorker worker=new TextWorker();
-        AutoShopAdministrator.getInstance().viewWorkList();
+
+        Connect.getInstance().send("viewWorkList");
 
 
     }

@@ -1,9 +1,10 @@
 package ui.action.box;
 
-import ui.api.IAction;
-import facade.AutoShopAdministrator;
 
-import utils.TextWorker;
+import ui.connect.Connect;
+
+import ui.api.IAction;
+import ui.utils.TextWorker;
 
 
 public class FreeUpSpaceBox implements IAction {
@@ -11,12 +12,13 @@ public class FreeUpSpaceBox implements IAction {
     public void execute() {
 
         TextWorker textWorker = new TextWorker();
-        AutoShopAdministrator.getInstance().viewAllCarInBox();
+        Connect.getInstance().send("viewAllCarInBox");
         textWorker.println("enter box num");
-        int boxNum = textWorker.getIntInput();
+        String boxNum = textWorker.getStringInput();
         textWorker.println("enter car num");
-        int carNum = textWorker.getIntInput();
-        AutoShopAdministrator.getInstance().freeUpSpaceBox(boxNum, carNum);
+        String carNum = textWorker.getStringInput();
+        Connect.getInstance().send("freeUpSpaceBox",boxNum,carNum);
+
 
     }
 }

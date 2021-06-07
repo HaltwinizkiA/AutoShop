@@ -1,14 +1,14 @@
 package ui.action.order;
 
 
-import facade.AutoShopAdministrator;
 import ui.api.IAction;
+import ui.connect.Connect;
 
 public class SortOrderPrice implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().ordersSortPrice();
-        AutoShopAdministrator.getInstance().viewAllOrder();
+        Connect.getInstance().send("ordersSortPrice");
+        Connect.getInstance().send("viewAllOrder");
         }
     }
 

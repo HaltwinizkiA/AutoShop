@@ -1,16 +1,16 @@
 package ui.action.order;
 
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
-import utils.FileWorker;
-import utils.TextWorker;
+import ui.connect.Connect;
+
 
 public class SortOrderDateComplete implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().ordersSortDateComplete();
-        AutoShopAdministrator.getInstance().viewAllOrder();
+        Connect.getInstance().send("ordersSortDateComplete");
+        Connect.getInstance().send("viewAllOrder");
 
     }
 }

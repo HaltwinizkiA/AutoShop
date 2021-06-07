@@ -6,7 +6,6 @@ import ui.menu.Menu;
 import ui.menu.item.MenuItem;
 
 
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

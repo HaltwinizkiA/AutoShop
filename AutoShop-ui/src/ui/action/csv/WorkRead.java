@@ -1,11 +1,12 @@
 package ui.action.csv;
 
-import facade.AutoShopAdministrator;
+
 import ui.api.IAction;
+import ui.connect.Connect;
 
 public class WorkRead implements IAction {
     @Override
     public void execute() {
-        AutoShopAdministrator.getInstance().csvWorkRead();
+        Connect.getInstance().send("csvWorkRead");
     }
 }
