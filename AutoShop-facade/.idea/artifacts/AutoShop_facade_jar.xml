@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="AutoShop-facade:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_facade_jar</output-path>
-    <root id="archive" name="AutoShop-facade.jar">
-      <element id="module-output" name="AutoShop-facade" />
-    </root>
-  </artifact>
-</component>

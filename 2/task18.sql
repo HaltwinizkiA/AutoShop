@@ -1,0 +1,1 @@
+select product.maker,min(price) from printer,product where product.model=printer.model and printer.color=1

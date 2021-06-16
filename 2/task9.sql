@@ -1,0 +1,1 @@
+select product.maker from product,pc where product.model=pc.model and pc.speed>=450

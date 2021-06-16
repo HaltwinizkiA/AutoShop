@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="AutoShop-Model:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_Model_jar</output-path>
-    <root id="archive" name="AutoShop-Model.jar">
-      <element id="module-output" name="AutoShop-Model" />
-    </root>
-  </artifact>
-</component>

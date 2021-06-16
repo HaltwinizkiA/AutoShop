@@ -1,0 +1,1 @@
+select model from (select model, price from pc  union select model, price from laptop union select model, price from printer) model1 where price = (select max(price) from (select price from pc union select price from laptop union select price from printer) model2);

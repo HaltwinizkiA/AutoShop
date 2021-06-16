@@ -1,0 +1,2 @@
+SELECT DISTINCT maker from product WHERE type = 'printer' AND maker IN(SELECT maker FROM product WHERE model IN(SELECT model FROM pc WHERE
+ speed = (SELECT MAX(speed) FROM (SELECT speed FROM pc WHERE ram=(SELECT MIN(ram) FROM pc) ) AS z4)));

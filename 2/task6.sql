@@ -1,0 +1,1 @@
+select product.maker,speed from laptop, product where laptop.model=product.model and  hd>10
