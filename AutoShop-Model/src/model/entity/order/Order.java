@@ -160,7 +160,7 @@ public class Order extends Entity implements Cloneable {
 
     @Override
     public String toString() {
-        return "Order status: " + status + "/ car arrival time: " + createOrderDate + "/planned start date:" + plannedStartDate + "/ ownersName:" + ownersName + "/ work:" + work + "/ " + car
+        return "ID: "+id+" Order status: " + status + "/ car arrival time: " + createOrderDate + "/planned start date:" + plannedStartDate + "/ ownersName:" + ownersName + "/ work:" + work + "/ " + car
                 + " \nprice: " + price;
     }
 }

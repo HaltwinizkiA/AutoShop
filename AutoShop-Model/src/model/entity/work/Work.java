@@ -40,7 +40,7 @@ public class Work extends Entity {
 
     @Override
     public String toString() {
-        return "Work: " + name + "  price= " + price;
+        return "ID: "+id+ " Work: " + name + "  price= " + price;
     }
 
     public String getName() {

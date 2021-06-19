@@ -97,7 +97,7 @@ public class Master extends Entity {
 
     @Override
     public String toString() {
-        return "Master name: " + name + "/ date of birth: " + dateOfBirth + "/ phoneNumber: " + phoneNumber + "/ specialty: " + specialty;
+        return "ID: "+id+" Master name: " + name + "/ date of birth: " + dateOfBirth + "/ phoneNumber: " + phoneNumber + "/ specialty: " + specialty;
     }
 }
 

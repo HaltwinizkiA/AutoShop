@@ -7,12 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b610f80b-67bf-4edf-af61-89388613dd44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AutoShop_Configuration_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AutoShop_Configuration_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data.base/dbProperty.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AutoShop-daoimpl/AutoShop-daoimpl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AutoShop-daoimpl/src/Dbconnect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-facade/.idea/artifacts/AutoShop_facade_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-facade/.idea/artifacts/AutoShop_facade_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-facade/out/production/AutoShop-facade/facade/AutoShopAdministrator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AutoShop-ui/src/library/AutoShop-facade.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../AutoShop-ui/src/library/AutoShop-facade.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library/AutoShop-facade.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../library/AutoShop-facade.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AutoShop-Configuration/configuration/AutoShopConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutoShop-Configuration/configuration/AutoShopConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AutoShop-Configuration/resources/property.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AutoShop-Configuration/resources/property.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configuration/AutoShopConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/configuration/AutoShopConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/AutoShop-Configuration.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../library/AutoShop-Configuration.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../logs.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,8 +102,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.25.jar" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -149,5 +154,19 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/configuration/AutoShopConfiguration.java</url>
+          <line>12</line>
+          <properties class="configuration.AutoShopConfiguration" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
