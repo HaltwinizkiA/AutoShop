@@ -20,7 +20,7 @@ insert into `autoshop`.`masters`(name,date_birth,specialty,phone_number,status )
 insert into `autoshop`.`masters`(name,date_birth,specialty,phone_number,status )values('Maxim','1997-04-19','electric',+35341232454,0);
 insert into `autoshop`.`masters`(name,date_birth,specialty,phone_number,status )values('Oleg','1994-01-15','Mehaic',+35304123,0);
 
-insert into `autoshop`.`Orders`(owners_name,create_date,planned_start_date,completion_date,status,car_id,master_id)values('sasha','2021-06-15','2021-06-15',null,'ACCEPTED',1,1);
+insert into `autoshop`.`Orders`(owners_name,create_date,planned_start_date,completion_date,car_id,master_id)values('sasha','2021-06-15','2021-06-15',null,1,1);
                
 insert into `autoshop`.`orders_works`(order_id,work_id)values(1,2);
 insert into `autoshop`.`orders_works`(order_id,work_id)values(1,4);
