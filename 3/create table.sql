@@ -6,7 +6,7 @@ planned_start_date date not null,
 completion_date date default null ,
 status nvarchar(30)not null default'ACCEPTED',
 car_id int(30) not null,
-master_id int(30)
+master_id int(30) default null
 );
 CREATE TABLE `autoshop`.`Masters`(
 id int(30)NOT NULL AUTO_INCREMENT primary key,
