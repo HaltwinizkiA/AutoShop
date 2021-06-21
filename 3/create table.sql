@@ -4,7 +4,7 @@ owners_name nvarchar(30)not null,
 create_date nvarchar(30)NOT NULL,
 planned_start_date date not null,
 completion_date date ,
-status nvarchar(30)not null,
+status nvarchar(30)not null default'ACCEPTED',
 car_id int(30) not null,
 master_id int(30)
 );
