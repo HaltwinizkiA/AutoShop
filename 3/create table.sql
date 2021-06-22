@@ -38,5 +38,5 @@ work_id int(30)
 );
 create table `autoshop`.`box_cars`(
 box_id int(30)not null,
-car_id int(30)not null
+car_id int(30)not null primary key
 );
