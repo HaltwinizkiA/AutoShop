@@ -1,11 +1,9 @@
 package ui.action.box;
 
 
-import ui.connect.Connect;
-
 import ui.api.IAction;
+import ui.connect.Connect;
 import ui.utils.TextWorker;
-
 
 public class FreeUpSpaceBox implements IAction {
     @Override
@@ -15,9 +13,7 @@ public class FreeUpSpaceBox implements IAction {
         Connect.getInstance().send("viewAllCarInBox");
         textWorker.println("enter box num");
         String boxNum = textWorker.getStringInput();
-        textWorker.println("enter car num");
-        String carNum = textWorker.getStringInput();
-        Connect.getInstance().send("freeUpSpaceBox",boxNum,carNum);
+        Connect.getInstance().send("freeUpSpaceBox",boxNum);
 
 
     }

@@ -20,10 +20,8 @@ public class AddMaster implements IAction {
         String phoneNumber=worker.getStringInput();
         worker.println("enter specialty");
         String specialty=worker.getStringInput();
-        worker.println("enter id ");
-        String id=worker.getStringInput();
 
-        Connect.getInstance().send("addMaster",name,dateOfBirth,phoneNumber,specialty,id);
+        Connect.getInstance().send("addMaster",name,dateOfBirth,phoneNumber,specialty);
 
     }
 }

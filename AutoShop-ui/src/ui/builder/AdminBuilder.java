@@ -64,6 +64,7 @@ public class AdminBuilder implements Build, Serializable {
         List<MenuItem> orderMenuItems = new ArrayList<>();
         orderMenu.setName("Order Menu");
         orderMenuItems.add(new MenuItem("Add Order", new AddOrder(), orderMenu));
+        orderMenuItems.add(new MenuItem("Add work to order",new AddWorkToOrder(),orderMenu ));
         orderMenuItems.add(new MenuItem("Canceled Order", new CanceledOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Close Order", new CloseOrder(), orderMenu));
         orderMenuItems.add(new MenuItem("Dell Order", new DellOrder(), orderMenu));

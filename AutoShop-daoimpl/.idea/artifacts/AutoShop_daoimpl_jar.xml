@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="AutoShop-daoimpl:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoShop_daoimpl_jar</output-path>
+    <root id="root">
+      <element id="archive" name="AutoShop-daoimpl.jar">
+        <element id="module-output" name="AutoShop-daoimpl" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,8 +1,7 @@
 package ui.utils;
 
-import model.entity.work.Work;
 
-import java.util.List;
+
 import java.util.Scanner;
 
 public class TextWorker {

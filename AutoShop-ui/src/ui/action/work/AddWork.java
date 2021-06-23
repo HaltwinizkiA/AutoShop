@@ -16,9 +16,7 @@ public class AddWork implements IAction {
         String workName=worker.getStringInput();
         worker.println("enter price ");
         String price=worker.getStringInput();
-        worker.println("enter id ");
-        String id=worker.getStringInput();
-        Connect.getInstance().send("addWork",workName,price,id);
+        Connect.getInstance().send("addWork",workName,price);
 
 
 
