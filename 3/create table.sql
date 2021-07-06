@@ -33,8 +33,11 @@ color nvarchar(30)NOT NULL,
 number nvarchar(30)NOT NULL
 );
 create table `autoshop`.`orders_works`(
-order_id int(30),
-work_id int(30)
+order_id int(30) not null,
+work_id int(30) not null,
+ PRIMARY KEY (order_id,work_id),
+ CONSTRAINT `fk_order` FOREIGN KEY (order_id) REFERENCES `orders` (id),
+  CONSTRAINT `fk_work` FOREIGN KEY (work_id) REFERENCES `works` (id)
 );
 create table `autoshop`.`box_cars`(
 box_id int(30)not null,
