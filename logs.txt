@@ -1,4 +1,10 @@
-work dao err java.sql.SQLException: No value specified for parameter 1
-order dao error java.sql.SQLException: Column 'date' not found.
-order dao error java.sql.SQLException: Column 'date' not found.
-order dao error java.sql.SQLException: Column 'date' not found.
+order dao error org.hibernate.QueryException: could not resolve property: order of: autoShop.model.entity.order.Order
+order dao error org.hibernate.QueryException: could not resolve property: orders of: autoShop.model.entity.order.Order
+order dao error org.hibernate.QueryException: could not resolve property: works of: autoShop.model.entity.order.Order
+order dao error org.hibernate.exception.SQLGrammarException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order this_ inner join cars car2_ on this_.car_id=car2_.id left outer join order' at line 1
+master dao err org.hibernate.exception.SQLGrammarException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order order0_ inner join cars car1_ on order0_.car_id=car1_.id left outer join o' at line 1
+order dao error org.hibernate.exception.SQLGrammarException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order this_ inner join cars car2_ on this_.car_id=car2_.id left outer join order' at line 1
+master dao err org.hibernate.exception.SQLGrammarException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order order0_ inner join cars car1_ on order0_.car_id=car1_.id left outer join o' at line 1
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\AutoShop-Configuration\src\autoShop.configuration.resources\property.properties (Системе не удается найти указанный путь)
+properties err java.io.FileNotFoundException: C:\Users\37533\Projects\AutoShop\AutoShop-Configuration\src\autoShop.configuration.resources\property.properties (Системе не удается найти указанный путь)
+read object errorjava.net.SocketException: Connection reset

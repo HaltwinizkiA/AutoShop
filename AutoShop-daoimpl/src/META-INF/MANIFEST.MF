@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: 
-Class-Path: AutoShop-connect.jar AutoShop-Annotation.jar AutoShop-utils.
- jar AutoShop-facade.jar mysql-connector-java-8.0.25.jar AutoShop-Model.
- jar AutoShop-Configuration.jar
-
