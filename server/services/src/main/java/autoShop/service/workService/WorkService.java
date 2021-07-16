@@ -22,7 +22,7 @@ public class WorkService extends AService {
         workDao.addWork(workingName,price);
         return "successfully";
 
-    }//todo action
+    }
 
     public synchronized String dellWork(String id) {
         workDao.deleteWork(id);
